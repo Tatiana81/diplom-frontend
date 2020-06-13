@@ -1,0 +1,32 @@
+@import url('./_login/_login.css');
+@import url('./_title/_title.css');
+@import url('./_subtitle/_subtitle.css');
+@import url('./_input/_input.css');
+@import url('./_error/_error.css');
+@import url('./_button/_button.css');
+@import url('./_alter/_alter.css');
+@import url('./_alter/_alter.css');
+@import url('./_alter-link/_alter-link.css');
+@import url('./_alter-text/_alter-text.css');
+@import url('./_close-button/_close-button.css');
+@import url('./_registration/_registration.css');
+@import url('./__invisible/__invisible.css');
+@import url('./_name-error/_name-error.css');
+@import url('./_exist-user-error/_exist-user-error.css');
+@import url('./_success-registration/_success-registration.css');
+@import url('./_success-text/_success-text.css');
+@import url('./_success-link/_success-link.css');
+
+.popup {
+  display: flex;
+  border-radius: 16px;
+  z-index: 15;
+}
+
+.popup .popup_input{
+  border-radius: 0;
+}
+
+.popup .popup_button{
+  border-radius: 100px;
+}

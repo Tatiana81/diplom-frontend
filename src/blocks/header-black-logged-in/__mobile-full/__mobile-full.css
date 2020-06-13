@@ -1,0 +1,8 @@
+@media screen and (max-width: 320px) {
+  .header-black-logged-in__mobile-full {
+    background: #1A1B22;
+    height: 286px;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+  }
+}

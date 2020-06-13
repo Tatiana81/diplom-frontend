@@ -1,0 +1,33 @@
+.header-white_main-link {
+  text-decoration: none;
+  width: 69px;
+  max-width: 69px;
+  height: 24px;
+  margin: 30px 34px 26px 0;
+  justify-content: center;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  color: #FFFFFF;
+  border: 0;
+  background: #fff;
+}
+
+@media screen and (max-width: 768px) {
+  .header-white_main-link {
+    width: 64px;
+    height: 41px;
+    margin: 22px 16px 0 0;
+    font-size: 16px;
+    box-shadow: none;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .header-white_main-link {
+    height: 18px;
+    margin: 20px auto 48px 16px;
+  }
+}

@@ -1,0 +1,9 @@
+.results_card-bookmark__invisible {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .results_card-bookmark__invisible {
+    display: none;
+  }
+}

@@ -1,0 +1,15 @@
+.footer_facebook__invisible {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .footer_facebook__invisible {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .footer_facebook__invisible {
+    display: none;
+  }
+}

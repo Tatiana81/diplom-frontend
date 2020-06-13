@@ -1,0 +1,21 @@
+@import url('./_button/_button.css');
+@import url('./_input/_input.css');
+@import url('./_subtitle/_subtitle.css');
+@import url('./_title/_title.css');
+@import url('./_search-group/_search-group.css');
+@import url('./__invisible/__invisible.css');
+@import url('./__header-line/__header-line.css');
+
+
+.header-search {
+  flex-direction: column;
+  background: transparent;
+}
+
+.header-search .header-search_input {
+  background: #fff;
+}
+
+.header-search .header-search_button {
+  background: #2F71E5;
+}

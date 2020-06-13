@@ -1,0 +1,31 @@
+.footer_yp {
+  width: 192px;
+  max-width: 192px;
+  height: 22px;
+  margin: 30px 41.89px 28px 0;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 24px;
+  text-align: center;
+  color: #1A1B22;
+  text-decoration: none;
+}
+
+@media screen and (max-width: 768px){
+  .footer_yp {
+    width: 176px;
+    max-width: 176px;
+    margin: 21px 25.89px 21px 0;
+    font-size: 100%;
+    line-height: 1.5em;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .footer_yp {
+    order: 4;
+    margin: 0 auto 40px 16px;
+  }
+}

@@ -1,0 +1,11 @@
+.header_main-link__active {
+  border: 0;
+  border-bottom: 3px solid #fff;
+  height: 47px;
+}
+
+@media screen and (max-width: 320px) {
+  .header_main-link__active {
+    border-bottom: 0;
+  }
+}

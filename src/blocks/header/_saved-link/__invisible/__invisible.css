@@ -1,0 +1,5 @@
+@media screen and (max-width: 320px) {
+  .header_saved-link__invisible {
+    display: none;
+  }
+}

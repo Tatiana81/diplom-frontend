@@ -1,0 +1,23 @@
+.about_foto {
+  width: 32.222222%;
+  height: 74.3589%;
+  max-height: 464px;
+  margin: 80px 56px 80px 104px;
+  border-radius: 1000px;
+}
+
+@media screen and (max-width: 768px) {
+  .about_foto {
+    width: 30.2083333%;
+    height: 65.53672%;
+    margin: 61px 32px 61px 40px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .about_foto {
+    width: 272px;
+    height: 272px;
+    margin: 32px 24px 24px 24px;
+  }
+}

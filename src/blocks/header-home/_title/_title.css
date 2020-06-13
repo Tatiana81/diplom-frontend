@@ -1,0 +1,31 @@
+.header-home_title {
+  width: 530px;
+  height: 92px;
+  font-family: "Roboto Slab";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 40px;
+  line-height: 46px;
+  color: #1A1B22;
+  margin: 0 0 30px 104px;
+}
+
+@media screen and (max-width: 768px) {
+  .header-home_title {
+    width: 336px;
+    height: 68px;
+    font-size: 30px;
+    line-height: 34px;
+    margin: 0 auto 16px 40px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .header-home_title {
+    width: 288px;
+    height: 102px;
+    font-size: 30px;
+    line-height: 34px;
+    margin: 0 16px 16px 16px;
+  }
+}

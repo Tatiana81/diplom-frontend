@@ -1,0 +1,28 @@
+@import url('./__invisible/__invisible.css');
+
+.popup_login {
+  z-index: 1;
+  flex-direction: column;
+  position: fixed;
+  background: #fff;
+  width: 430px;
+  height: 380px;
+  left: 35.06944444vw;
+  top: 207px;
+}
+
+@media screen and (max-width: 768px) {
+  .popup_login {
+    width: 55.989vw;
+    left: 22.0052083333vw;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .popup_login {
+    height: 520px;
+    width: 320px;
+    left: 0;
+    top: 56px;
+  }
+}

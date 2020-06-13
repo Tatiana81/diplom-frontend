@@ -1,0 +1,19 @@
+@import url('./_author-link/_author-link.css');
+@import url('./__invisible/__invisible.css');
+@import url('./__mobile-full/__mobile-full.css');
+@import url('./__mobile-short/__mobile-short.css');
+
+.header-black {
+  z-index: 2;
+  display: flex;
+  color: #fff;
+  background: transparent;
+}
+
+@media screen and (max-width:320px) {
+  .header-black {
+    flex-direction: column;
+    flex-wrap: wrap;
+    overflow: hidden;
+  }
+}

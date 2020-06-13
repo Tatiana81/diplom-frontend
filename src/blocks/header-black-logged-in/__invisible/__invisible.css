@@ -1,0 +1,8 @@
+@media screen and (max-width: 1440px) {
+  .header-black-logged-in__invisible {
+    display: none;
+  }
+}
+
+
+

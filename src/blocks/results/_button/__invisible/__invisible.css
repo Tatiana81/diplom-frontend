@@ -1,0 +1,15 @@
+.results_button__invisible {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .results_button__invisible {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .results_button__invisible {
+    display: none;
+  }
+}

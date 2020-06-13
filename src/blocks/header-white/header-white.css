@@ -1,0 +1,22 @@
+@import url('./_exit-link/_exit-link.css');
+@import url('./_main-link/_main-link.css');
+@import url('./__invisible/__invisible.css');
+@import url('./__visible/__visible.css');
+@import url('./_saved-link/_saved-link.css');
+@import url('./__bordered/__bordered.css');
+@import url('./__unbordered/__unbordered.css');
+@import url('./__mobile-full/__mobile-full.css');
+@import url('./__mobile-short/__mobile-short.css');
+
+.header-white {
+  position: relative;
+  color: #1A1B22;
+}
+
+@media screen and (max-width: 320px) {
+  .header-white {
+    flex-direction: column;
+    flex-wrap: wrap;
+    overflow: hidden;
+  }
+}

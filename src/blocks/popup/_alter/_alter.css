@@ -1,0 +1,22 @@
+.popup_alter {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  width: 226px;
+  height: 20px;
+  margin: 0 auto 28px auto;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  color: #000000;
+}
+
+@media screen and (max-width: 320px) {
+  .popup_alter {
+    margin: 0 47px 230px 47px;
+  }
+}

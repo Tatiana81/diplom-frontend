@@ -1,0 +1,33 @@
+@import url('./_exit-link/_exit-link.css');
+@import url('./__invisible/__invisible.css');
+@import url('./__visible/__visible.css');
+@import url('./__mobile-full/__mobile-full.css');
+@import url('./__mobile-short/__mobile-short.css');
+
+.header-black-logged-in {
+    position: relative;
+    background: transparent;
+}
+
+@media screen and (max-width: 1440px) {
+  .header-black-logged-in .header-black-logged-in_exit-link {
+    background: url('../images/white_exit_image.svg') no-repeat 77px 16px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .header-black-logged-in .header-black-logged-in_exit-link {
+    background: url('../images/white_exit_image.svg') no-repeat 67px 12px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .header-black-logged-in {
+    flex-direction: column;
+    flex-wrap: wrap;
+    overflow: hidden;
+  }
+.header-black-logged-in .header-black-logged-in_exit-link {
+  background: url('../images/white_exit_image.svg') no-repeat 170px 18px;
+  }
+}

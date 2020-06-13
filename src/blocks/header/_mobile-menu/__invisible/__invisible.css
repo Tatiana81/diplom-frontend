@@ -1,0 +1,17 @@
+@media screen and (max-width: 1440px) {
+  .header_mobile-menu__invisible {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .header_mobile-menu__invisible {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .header_mobile-menu__invisible {
+    display: block;
+  }
+}

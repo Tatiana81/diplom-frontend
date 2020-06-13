@@ -1,0 +1,41 @@
+@import url('./_title/_title.css');
+@import url('./_main-link/_main-link.css');
+@import url('./_saved-link/_saved-link.css');
+@import url('./__invisible/__invisible.css');
+@import url('./__white/__white.css');
+@import url('./_mobile-menu/_mobile-menu.css');
+@import url('./_line/_line.css');
+
+.header {
+  background: url('../images/background.jpg') no-repeat;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+@media screen and (max-width: 320px) {
+  .header {
+      flex-wrap: wrap;
+      overflow: hidden;
+  }
+
+  .header .header_mobile-menu__white-stripes {
+    background: url('../images/menu.svg') no-repeat transparent;
+  }
+  .header .header_mobile-menu__black-stripes {
+    background: url('../images/black_menu.svg') no-repeat transparent;
+  }
+  .header .header_mobile-menu__white-cross {
+    background: url('../images/white_cross.png') no-repeat transparent;
+  }
+  .header .header_mobile-menu__black-cross {
+    background: url('../images/black_cross.jpg') no-repeat transparent;
+  }
+
+  .header .header-black__mobile-full {
+    background: #1A1B22;
+  }
+
+  .header .header-black-logged-in__mobile-full {
+    background: #1A1B22;
+  }
+}

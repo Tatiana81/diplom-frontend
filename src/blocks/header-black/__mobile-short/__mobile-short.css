@@ -1,0 +1,17 @@
+@media screen and (max-width: 1440px){
+  .header-black__mobile-short {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px){
+  .header-black__mobile-short {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 320px){
+  .header-black__mobile-short {
+    max-height: 56px;
+  }
+}

@@ -1,0 +1,17 @@
+.popup_subtitle {
+  width: 83.25581395%;
+  height: 14px;
+  margin: 0 auto 9px 36px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 15px;
+  color: #2F71E5;
+}
+
+@media screen and (max-width: 320px) {
+  .popup_subtitle {
+    margin: 0 238px 9px 16px;
+  }
+}

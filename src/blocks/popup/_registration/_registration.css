@@ -1,0 +1,28 @@
+@import url('./__invisible/__invisible.css');
+
+.popup_registration {
+  z-index: 10;
+  flex-direction: column;
+  position: fixed;
+  background: #fff;
+  width: 28.86111111vw;
+  height: 458px;
+  left: 35.06944444vw;
+  top: 207px;
+  box-sizing: content-box;
+}
+
+@media screen and (max-width: 768px) {
+  .popup_registration {
+    width: 55.989vw;
+    left: 22.0052083333vw;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .popup_registration {
+    width: 320px;
+    left: 0;
+    top: 56px;
+  }
+}

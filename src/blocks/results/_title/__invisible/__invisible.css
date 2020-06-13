@@ -1,0 +1,9 @@
+.results_title__invisible {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .results_title__invisible {
+    display: none;
+  }
+}

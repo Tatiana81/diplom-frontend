@@ -1,0 +1,5 @@
+@media screen and (max-width: 320px) {
+  .header_main-link__invisible {
+    display: none;
+  }
+}
