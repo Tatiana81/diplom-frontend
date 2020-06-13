@@ -5,13 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>News Explorer</title>
+    <meta name="description" content="Сайт поиска новостей. У нас всегда есть что-то новое для Вас">
+    <meta name="author" lang="ru" content="Татьяна Суроева" />
     <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.chunks.main.css %>">
-    <link rel="favicon" href="./images/favicon.ico">
+    <link rel="icon" type="image/png" href="<%=require('./images/favicon.png').default%>">
   </head>
   <body>
   <div class="body grey grey__invisible" id="grey"></div>
   <div class="popup__invisible popup_login__invisible" id="popup_login">
-    <img src="<%=require('./images/close.svg').default%>" alt="close" class="popup popup_close-button" name="close_buttons">
+    <img src="<%=require('./images/close.svg').default%>" alt="close" class="popup popup_close-button">
     <p class="popup popup_title">Вход</p>
     <p class="popup popup_subtitle">Email</p>
     <input type="email" class="popup popup_input" placeholder="Введите почту">
@@ -26,7 +28,7 @@
     </div>
   </div>
   <div class="popup__invisible popup_registration" id="popup_registration">
-    <img src="<%=require('./images/close.svg').default%>" alt="close" class="popup popup_close-button" name="close_buttons">
+    <img src="<%=require('./images/close.svg').default%>" alt="close" class="popup popup_close-button">
     <p class="popup popup_title">Регистрация</p>
     <p class="popup popup_subtitle">Email</p>
     <input type="email" tabindex="1" class="popup popup_input" placeholder="Введите почту">
@@ -45,32 +47,32 @@
     </div>
   </div>
   <div class="popup__invisible popup_success-registration" id="popup_success_registration">
-    <img src="<%=require('./images/close.svg').default%>" alt="close" class="popup popup_close-button" name="close_buttons">
+    <img src="<%=require('./images/close.svg').default%>" alt="close" class="popup popup_close-button">
     <p class="popup_title popup_success-text">Пользователь успешно зарегистрирован</p>
-    <a href="" class="popup popup_success-link" name="entrance_after_registration">Выполнить вход</a>
+    <button class="popup popup_success-link">Выполнить вход</button>
   </div>
     <header class="header">
       <div class="header header-black header-black__mobile-short" id="logged_out_form_black">
         <h1 class="header-black header_title">NewsExplorer</h1>
         <button class="header header_mobile-menu header_mobile-menu__white-stripes header_mobile-menu__invisible" name="mobile_menu_button"></button>
         <div class="header header_line header_line__white header_line__invisible"></div>
-        <button class="header-black header_main-link header_main-link__active" name="main_link_logged_out">Главная</button>
+        <a href="index.html" class="header-black header_main-link header_main-link__active">Главная</a>
         <button class="header-black header-black_author-link" name="author-link">Авторизоваться</button>
       </div>
       <div class="header header-black-logged-in__invisible header-black-logged-in  header-black-logged-in__mobile-short" id="logged_in_form_black">
          <h1 class="header-black-logged-in header-black-logged-in__visible header_title">NewsExplorer</h1>
         <button class="header header_mobile-menu header_mobile-menu__white-stripes header_mobile-menu__invisible" name="mobile_menu_button"></button>
         <div class="header header_line header_line__white header_line__invisible"></div>
-        <a href="index.html" class="header-black-logged-in header-black-logged-in__visible header_main-link header_main-link__active header_main-link__invisible"  name="logged_in_main_link">Главная</a>
-        <a href="index.html" class="header-black-logged-in header-black-logged-in__visible  header_saved-link header_saved-link__passive header_saved-link__invisible" name="saved_articles_link">Сохранённые статьи</a>
-        <a href="index.html" class="header-black-logged-in header-black-logged-in__visible  header-black-logged-in_exit-link header-black-logged-in_exit-link__invisible" name="exit_button_black">Грета</a>
+        <a href="index.html" class="header-black-logged-in header-black-logged-in__visible header_main-link header_main-link__active header_main-link__invisible">Главная</a>
+        <a href="index.html" class="header-black-logged-in header-black-logged-in__visible  header_saved-link header_saved-link__passive header_saved-link__invisible">Сохранённые статьи</a>
+        <a href="index.html" class="header-black-logged-in header-black-logged-in__visible  header-black-logged-in_exit-link header-black-logged-in_exit-link__invisible">Грета</a>
       </div>
       <div class="header__white header-white header-white__bordered header-white__invisible header-white__mobile-short" id="login_form_white">
         <h1 class="header-white header-white__visible header_title">NewsExplorer</h1>
         <button class="header header_mobile-menu header_mobile-menu__black-stripes header_mobile-menu__invisible" name="mobile_menu_button"></button>
         <div class="header header_line header_line__black header_line__invisible"></div>
-        <a href="index.html" class="header-white header-white__visible header-white_main-link" name="logged_in_main-link">Главная</a>
-        <button class="header-white header-white__visible header-white_saved-link ">Сохранённые статьи</button>
+        <a href="index.html" class="header-white header-white__visible header-white_main-link">Главная</a>
+        <button class="header-white header-white__visible header-white_saved-link">Сохранённые статьи</button>
         <a href="index.html" class="header-white header-white__visible header-white_exit-link">Грета</a>
       </div>
       <div class="header header-search header-search__header-line" id="search">
@@ -91,9 +93,9 @@
       </div>
     </header>
     <main class="main">
-      <div class="main loading__invisible" id="loading" name="loading">
-        <i class="loading__invisible loading_circle-preloader" name="loading"></i>
-        <p class="loading__invisible loading_title" name="loading">Идет поиск новостей...</p>
+      <div class="main loading__invisible" id="loading">
+        <i class="loading__invisible loading_circle-preloader"></i>
+        <p class="loading__invisible loading_title">Идет поиск новостей...</p>
       </div>
       <div class="main not-found__invisible" id="not-found">
         <img src="<%=require('./images/not_found.svg').default%>" alt="not-found" class="not-found not-found_image">
@@ -106,10 +108,10 @@
           <div class="results results_card">
             <img src="<%=require('./images/background.jpg').default%>" alt="picture" class="results_card results_card-image">
             <button class="results_cards results_card-bookmark__invisible results_card-bookmark__white-flag" name="bookmark"></button>
-            <p class="results_card results_card-author-expected__invisible" name="author_exceeded">Войдите, чтобы сохранять статьи</p>
+            <p class="results_card results_card-author-expected__invisible">Войдите, чтобы сохранять статьи</p>
             <button class="results_cards results_waste results_waste__white-waste" name="waste"></button>
             <button class="results_card results_card-delete__invisible" name="delete_alert">Убрать из сохраненных</button>
-            <p class="results_card results_card-category__invisible" name="category">Природа</p>
+            <p class="results_card results_card-category__invisible">Природа</p>
             <p class="results_card results_card-date">05.06.2020</p>
             <p class="results_card results_card-title">Национальное достояние &ndash; парки</p>
             <p class="results_card results_card-preread">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.</p>
@@ -118,10 +120,10 @@
           <div class="results results_card">
             <img src="<%=require('./images/background.jpg').default%>" alt="picture" class="results_card results_card-image">
             <button class="results_cards results_card-bookmark__invisible results_card-bookmark__white-flag" name="bookmark"></button>
-            <p class="results_card results_card-author-expected__invisible" name="author_exceeded">Войдите, чтобы сохранять статьи</p>
+            <p class="results_card results_card-author-expected__invisible">Войдите, чтобы сохранять статьи</p>
             <button class="results_cards results_waste results_waste__white-waste" name="waste"></button>
             <button class="results_card results_card-delete__invisible" name="delete_alert">Убрать из сохраненных</button>
-            <p class="results_card results_card-category__invisible" name="category">Природа</p>
+            <p class="results_card results_card-category__invisible">Природа</p>
             <p class="results_card results_card-date">05.06.2020</p>
             <p class="results_card results_card-title">Национальное достояние &ndash; парки</p>
             <p class="results_card results_card-preread">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.</p>
@@ -130,10 +132,10 @@
           <div class="results results_card">
             <img src="<%=require('./images/background.jpg').default%>" alt="picture" class="results_card results_card-image">
             <button class="results_cards results_card-bookmark__invisible results_card-bookmark__white-flag" name="bookmark"></button>
-            <p class="results_card results_card-author-expected__invisible" name="author_exceeded">Войдите, чтобы сохранять статьи</p>
+            <p class="results_card results_card-author-expected__invisible">Войдите, чтобы сохранять статьи</p>
             <button class="results_cards results_waste results_waste__white-waste" name="waste"></button>
             <button class="results_card results_card-delete__invisible" name="delete_alert">Убрать из сохраненных</button>
-            <p class="results_card results_card-category__invisible" name="category">Природа</p>
+            <p class="results_card results_card-category__invisible">Природа</p>
             <p class="results_card results_card-date">05.06.2020</p>
             <p class="results_card results_card-title">Национальное достояние &ndash; парки</p>
             <p class="results_card results_card-preread">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.</p>
@@ -144,7 +146,9 @@
         <button class="results results_button__invisible" id="results_button">Показать еще</button>
       </div>
       <div class="main about" id="about">
-        <img src="<%=require('./images/test_image.jpg').default%>" alt="my-foto" class="about about_foto">
+        <picture class="about about_foto">
+          <img src="<%=require('./images/test_image.jpg').default%>" alt="my-foto">
+        </picture>
         <div class="about about_text">
           <p class="about about_author">Об авторе</p>
           <p class="about about_description">Это блок с описанием автора проекта. Здесь следует указать, как вас зовут, чем вы занимаетесь, какими технологиями разработки владеете.</p>

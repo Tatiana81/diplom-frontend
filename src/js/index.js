@@ -2,37 +2,36 @@ import "index.css"
 const author_link = document.getElementsByName("author-link")
 const login_popup = document.getElementById("popup_login")
 const registration_popup = document.getElementById("popup_registration")
-const close_buttons = document.getElementsByName("close_buttons")
+const close_buttons = document.getElementsByClassName("popup_close-button")
 const enter_button = document.getElementsByName("enter_button")
 const reg_button = document.getElementsByName("reg_button")
 const logged_in_form_black = document.getElementById("logged_in_form_black")
 const logged_out_form_black = document.getElementById("logged_out_form_black")
 const login_form_white = document.getElementById("login_form_white")
-const exit_button_black = document.getElementsByName("exit_button_black")
-const saved_articles_link = document.getElementsByName("saved_articles_link")
+const exit_button_black = document.getElementsByClassName("header-black-logged-in_exit-link")
+const saved_articles_link = document.getElementsByClassName("header_saved-link")
 const home = document.getElementById("home")
 const search = document.getElementById("search")
 const results = document.getElementById("results")
 const about = document.getElementById("about")
-const logged_in_main_link = document.getElementsByName("logged_in_main_link")
+const logged_in_main_link = document.getElementsByClassName("header_main-link")
 const search_action = document.getElementsByName("search_action")
-const loading = document.getElementsByName("loading")
+const loading = document.getElementById("loading")
 const not_found = document.getElementById("not-found")
 const search_input = document.getElementById("search_input")
 const results_title = document.getElementById('results_title')
 const results_button = document.getElementById('results_button')
 const bookmarks = document.getElementsByName("bookmark")
 const waste = document.getElementsByName("waste")
-const category = document.getElementsByName("category")
+const category = document.getElementsByClassName("results_card-category__invisible")
 const alter_link = document.getElementsByName("alter_link")
 const success_reg = document.getElementById("popup_success_registration")
-const enter_after_registration = document.getElementsByName('entrance_after_registration')
+const enter_after_registration = document.getElementsByClassName('popup_success-link')
 const delete_alert = document.getElementsByName("delete_alert")
-const author_exceeded = document.getElementsByName("author_exceeded")
 const mobile_menu_button = document.getElementsByName("mobile_menu_button")
-const main_link_logged_out = document.getElementsByName("main_link_logged_out")
 const grey = document.getElementById("grey")
 const header_line = document.querySelectorAll(".header_line")
+
 
 author_link.forEach(item=> {
   item.addEventListener('click', function (event) {
@@ -89,9 +88,8 @@ saved_articles_link.forEach(item => {
     category.forEach(item => {
       item.classList.replace("results_card-category__invisible", "results_card-category")
     })
-    loading.forEach(item => {
-      item.classList.replace("loading", "loading__invisible")
-    })
+    loading.classList.replace("loading", "loading__invisible")
+    loading.children.forEach(item => item.classList.replace("loading", "loading__invisible"))
     not_found.classList.replace("not-found", "not-found__invisible")
     })
 })
@@ -117,9 +115,6 @@ search_action.forEach(item => {
     bookmarks.forEach(item => {
       item.classList.replace("results_card-bookmark__invisible", "results_card-bookmark")
     })
-    waste.forEach(item => {
-      item.classList.replace("results_card-waste", "results_card-waste__invisible")
-    })
     category.forEach(item => {
       item.classList.replace("results_card-category", "results_card-category__invisible")
     })
@@ -129,15 +124,14 @@ search_action.forEach(item => {
     waste.forEach(item => {
       item.classList.replace("results_waste", "results_waste__invisible")
     })
-    loading.forEach(item => {
-      item.classList.replace("loading__invisible", "loading")
-    })
+    loading.classList.replace("loading__invisible", "loading")
+    loading.children.forEach(item => item.classList.replace("loading__invisible", "loading"))
     setTimeout(() => {
-      loading.forEach(item => {item.classList.replace("loading", "loading__invisible")})
+    loading.classList.replace("loading", "loading__invisible")
+    loading.children.forEach(item => item.classList.replace("loading", "loading__invisible"))
       if (search_input.value === 'статьи') {
         results.classList.replace("results__invisible", "results")
         results_title.classList.replace("results_title__invisible", "results_title")
-
         results_button.classList.replace("results_button__invisible","results_button")
       }
       else not_found.classList.replace("not-found__invisible", "not-found")

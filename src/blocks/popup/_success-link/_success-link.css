@@ -1,4 +1,5 @@
 .popup_success-link {
+  width: 228px;
   margin: 0 166px 51px 36px;
   font-family: "Inter";
   font-style: normal;
@@ -7,6 +8,9 @@
   line-height: 22px;
   color: #2F71E5;
   text-decoration: none;
+  border: 0;
+  background: #fff;
+  padding: 0;
 }
 
 @media screen and (max-width: 320px) {

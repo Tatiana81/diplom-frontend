@@ -6,7 +6,7 @@
   "scripts": {
     "build": "NODE_ENV=production rimraf dist && webpack --mode production",
     "dev": "NODE_ENV=development webpack-dev-server --mode development --open --watch",
-    "deploy": "NODE_ENV=production gh-pages -d dist"
+    "deploy": "NODE_ENV=production gh-pages -d public"
   },
   "repository": {
     "type": "git",
@@ -18,7 +18,7 @@
   "bugs": {
     "url": "https://github.com/Tatiana81/diplom-frontend/issues"
   },
-  "homepage": "https://github.com/Tatiana81/diplom-frontend#readme",
+  "homepage": "https://Tatiana81.github.io/diplom-frontend/",
   "devDependencies": {
     "@babel/cli": "^7.8.4",
     "@babel/core": "^7.9.0",
