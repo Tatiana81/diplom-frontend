@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const WebpackMd5Hash = require('webpack-md5-hash');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-const isDev = process.env.NODE_ENV === 'development';
+
 var webpack = require('webpack');
 
 module.exports = {
@@ -21,8 +21,8 @@ module.exports = {
                 exclude: /node_modules/
             },
             {
-                test: /\.css$/i, // применять это правило только к CSS-файлам
-                use: [(isDev ? 'style-loader' : MiniCssExtractPlugin.loader), 'css-loader', 'postcss-loader'] // к этим файлам нужно применить пакеты, которые мы уже установили
+                test: /\.css$/i,
+                use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader']
             },
             // пример настройки плагина image-webpack-loader
             {
@@ -44,7 +44,7 @@ module.exports = {
     },
     plugins: [
         new MiniCssExtractPlugin({
-            filename: 'style.[contenthash].css'
+            filename: '/css/style.[contenthash].css'
         }),
         new OptimizeCssAssetsPlugin({
             assetNameRegExp: /\.css$/g,
