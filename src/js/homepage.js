@@ -1,32 +1,17 @@
-import "../pages/index.css"
+import "../pages/homepage.css"
 
-const author_link = document.getElementsByName("author-link")
-const login_popup = document.getElementById("popup_login")
-const registration_popup = document.getElementById("popup_registration")
-const close_buttons = document.getElementsByClassName("popup_close-button")
-const enter_button = document.getElementsByName("enter_button")
-const reg_button = document.getElementsByName("reg_button")
-const logged_in_form_black = document.getElementById("logged_in_form_black")
-const logged_out_form_black = document.getElementById("logged_out_form_black")
 const login_form_white = document.getElementById("login_form_white")
 const exit_button_black = document.getElementsByClassName("header-black-logged-in_exit-link")
+const saved_articles_link = document.getElementsByClassName("header_saved-link")
 const home = document.getElementById("home")
 const search = document.getElementById("search")
 const results = document.getElementById("results")
 const about = document.getElementById("about")
 const logged_in_main_link = document.getElementsByClassName("header_main-link")
 const search_action = document.getElementsByName("search_action")
-const loading = document.getElementById("loading")
-const not_found = document.getElementById("not-found")
-const search_input = document.getElementById("search_input")
 const results_title = document.getElementById('results_title')
-const results_button = document.getElementById('results_button')
-const bookmarks = document.getElementsByName("bookmark")
 const waste = document.getElementsByName("waste")
 const category = document.getElementsByClassName("results_card-category__invisible")
-const alter_link = document.getElementsByName("alter_link")
-const success_reg = document.getElementById("popup_success_registration")
-const enter_after_registration = document.getElementsByClassName('popup_success-link')
 const delete_alert = document.getElementsByName("delete_alert")
 const mobile_menu_button = document.getElementsByName("mobile_menu_button")
 const grey = document.getElementById("grey")
@@ -56,6 +41,7 @@ enter_button.forEach(item => {
     event.target.closest(".popup_login").classList.replace("popup", "popup__invisible")
     logged_out_form_black.classList.replace("header-black", "header-black__invisible");
     logged_in_form_black.classList.replace("header-black-logged-in__invisible", "header-black-logged-in__visible")
+    saved_articles_link.forEach(item => { item.classList.add("header_saved-link__visible") })
     grey.classList.replace("grey__visible","grey__invisible")
   })
 })
@@ -67,6 +53,30 @@ exit_button_black.forEach(item => {
     logged_out_form_black.classList.replace("header-black__invisible","header-black");
     logged_in_form_black.classList.replace("header-black-logged-in__visible","header-black-logged-in__invisible")
   })
+})
+
+saved_articles_link.forEach(item => {
+  item.addEventListener('click', event => {
+    event.preventDefault();
+    logged_in_form_black.classList.replace("header-black-logged-in__visible", "header-black-logged-in__invisible")
+    login_form_white.classList.replace("header-white__invisible", "header-white__visible")
+    home.classList.replace("header-home__invisible", "header-home")
+    search.classList.replace("header-search", "header-search__invisible")
+    results.classList.replace("results__invisible", "results")
+    about.classList.replace("about", "about__invisible")
+    bookmarks.forEach(item => {
+      item.classList.replace("results_card-bookmark", "results_card-bookmark__invisible")
+    })
+    waste.forEach(item => {
+      item.classList.replace("results_waste__invisible", "results_waste")
+    })
+    category.forEach(item => {
+      item.classList.replace("results_card-category__invisible", "results_card-category")
+    })
+    loading.classList.replace("loading", "loading__invisible")
+    loading.children.forEach(item => item.classList.replace("loading", "loading__invisible"))
+    not_found.classList.replace("not-found", "not-found__invisible")
+    })
 })
 
 logged_in_main_link.forEach(item => {

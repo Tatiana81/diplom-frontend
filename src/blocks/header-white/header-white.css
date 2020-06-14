@@ -7,8 +7,11 @@
 @import url('./__unbordered/__unbordered.css');
 @import url('./__mobile-full/__mobile-full.css');
 @import url('./__mobile-short/__mobile-short.css');
+@import url('./__white-back/__white-back.css');
 
 .header-white {
+  display: flex;
+  flex-direction: row;
   position: relative;
   color: #1A1B22;
 }

@@ -7,10 +7,14 @@ const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 var webpack = require('webpack');
 
 module.exports = {
-    entry: { main: './src/js/index.js' },
+  entry: {
+    main: './src/js/index.js',
+    homepage: './src/js/homepage.js',
+  },
     output: {
-        path: path.resolve(__dirname, 'public'),
-        filename: '[name].[chunkhash].js'
+      path: path.resolve(__dirname, 'dist/'),
+      filename: 'js/[name].[chunkhash].js',
+      chunkFilename: '[name].[chunkhash].js',
     },
     module: {
         rules: [{
@@ -20,11 +24,10 @@ module.exports = {
                 },
                 exclude: /node_modules/
             },
-            {
-                test: /\.css$/i,
-                use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader']
-            },
-            // пример настройки плагина image-webpack-loader
+        {
+          test: /\.css$/iu,
+          use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader'],
+        },
             {
                 test: /\.(png|jpe?g|gif|svg|ico)$/i,
                 loader: 'file-loader',
@@ -43,9 +46,13 @@ module.exports = {
         modules: [__dirname + '/src/pages', __dirname + '/node_modules', __dirname + '/src/js', __dirname + '/src/images']
     },
     plugins: [
-        new MiniCssExtractPlugin({
-            filename: '/css/style.[contenthash].css'
-        }),
+      new MiniCssExtractPlugin({
+        filename: '[name].css',
+        chunkFilename: '[name].[contenthash].css',
+        options: {
+          publicPath: '../',
+        },
+      }),
         new OptimizeCssAssetsPlugin({
             assetNameRegExp: /\.css$/g,
             cssProcessor: require('cssnano'),
@@ -53,13 +60,15 @@ module.exports = {
             canPrint: true
         }),
         new HtmlWebpackPlugin({
-            // Означает, что:
-            inject: false, // стили НЕ нужно прописывать внутри тегов
-            template: './src/index.html', // откуда брать образец для сравнения с текущим видом проекта
-            filename: 'index.html' // имя выходного файла, то есть того, что окажется в папке dist после сборки
+            inject: false,
+            template: './src/index.html',
+            filename: 'index.html'
         }),
-        new webpack.DefinePlugin({
-            'NODE_ENV': JSON.stringify(process.env.NODE_ENV)
-        })
+        new HtmlWebpackPlugin({
+            inject: false,
+            template: './src/homepage.html',
+            filename: 'homepage.html',
+        }
+      ),
     ]
 };

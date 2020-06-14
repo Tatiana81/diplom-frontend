@@ -3,16 +3,14 @@
 @import url('./_saved-link/_saved-link.css');
 @import url('./__invisible/__invisible.css');
 @import url('./__white/__white.css');
+@import url('./__black/__black.css');
 @import url('./_mobile-menu/_mobile-menu.css');
 @import url('./_line/_line.css');
 
 .header {
-  background: url('../images/background.jpg') no-repeat;
   flex-wrap: wrap;
   justify-content: space-around;
 }
-
-
 
 @media screen and (max-width: 320px) {
   .header {

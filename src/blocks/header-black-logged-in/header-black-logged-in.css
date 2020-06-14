@@ -5,11 +5,12 @@
 @import url('./__mobile-short/__mobile-short.css');
 
 .header-black-logged-in {
+    z-index: 2;
     position: relative;
     background: transparent;
 }
 
-@media screen and (max-width: 1440px) {
+@media screen and (min-width: 768px) {
   .header-black-logged-in .header-black-logged-in_exit-link {
     background: url('../images/white_exit_image.svg') no-repeat 77px 16px;
   }

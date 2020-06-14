@@ -7,13 +7,13 @@
     <title>News Explorer</title>
     <meta name="description" content="Сайт поиска новостей. У нас всегда есть что-то новое для Вас">
     <meta name="author" lang="ru" content="Татьяна Суроева" />
-    <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.chunks.main.css %>">
-    <link rel="icon" type="image/png" href="<%=require('./images/favicon.png').default%>">
+    <link rel="stylesheet" href="main.css">
+    <link rel="icon" type="image/png" href="images/favicon.png">
   </head>
   <body>
   <div class="body grey grey__invisible" id="grey"></div>
   <div class="popup__invisible popup_login__invisible" id="popup_login">
-    <img src="<%=require('./images/close.svg').default%>" alt="close" class="popup popup_close-button">
+    <img src="images/close.svg" alt="close" class="popup popup_close-button">
     <p class="popup popup_title">Вход</p>
     <p class="popup popup_subtitle">Email</p>
     <input type="email" class="popup popup_input" placeholder="Введите почту">
@@ -28,7 +28,7 @@
     </div>
   </div>
   <div class="popup__invisible popup_registration" id="popup_registration">
-    <img src="<%=require('./images/close.svg').default%>" alt="close" class="popup popup_close-button">
+    <img src="images/close.svg" alt="close" class="popup popup_close-button">
     <p class="popup popup_title">Регистрация</p>
     <p class="popup popup_subtitle">Email</p>
     <input type="email" tabindex="1" class="popup popup_input" placeholder="Введите почту">
@@ -47,7 +47,7 @@
     </div>
   </div>
   <div class="popup__invisible popup_success-registration" id="popup_success_registration">
-    <img src="<%=require('./images/close.svg').default%>" alt="close" class="popup popup_close-button">
+    <img src="images/close.svg" alt="close" class="popup popup_close-button">
     <p class="popup_title popup_success-text">Пользователь успешно зарегистрирован</p>
     <button class="popup popup_success-link">Выполнить вход</button>
   </div>
@@ -82,7 +82,7 @@
         <p class="loading__invisible loading_title">Идет поиск новостей...</p>
       </div>
       <div class="main not-found__invisible" id="not-found">
-        <img src="<%=require('./images/not_found.svg').default%>" alt="not-found" class="not-found not-found_image">
+        <img src="images/not_found.svg" alt="not-found" class="not-found not-found_image">
         <p class="not-found not-found_title">Ничего не найдено</p>
         <p class="not-found not-found_subtitle">К сожалению по вашему запросу ничего&nbsp; не&nbsp;найдено.</p>
       </div>
@@ -90,7 +90,7 @@
         <p class="results results_title__invisible" id="results_title">Результаты поиска</p>
         <div class="results results_cards results_cards__white">
           <div class="results results_card">
-            <img src="<%=require('./images/background.jpg').default%>" alt="picture" class="results_card results_card-image">
+            <img src="images/background.jpg" alt="picture" class="results_card results_card-image">
             <button class="results_cards results_card-bookmark__invisible results_card-bookmark__white-flag" name="bookmark"></button>
             <p class="results_card results_card-author-expected__invisible">Войдите, чтобы сохранять статьи</p>
             <button class="results_cards results_waste results_waste__white-waste" name="waste"></button>
@@ -102,7 +102,7 @@
             <p class="results_card results_card-source">Интернет</p>
           </div>
           <div class="results results_card">
-            <img src="<%=require('./images/background.jpg').default%>" alt="picture" class="results_card results_card-image">
+            <img src="images/background.jpg" alt="picture" class="results_card results_card-image">
             <button class="results_cards results_card-bookmark__invisible results_card-bookmark__white-flag" name="bookmark"></button>
             <p class="results_card results_card-author-expected__invisible">Войдите, чтобы сохранять статьи</p>
             <button class="results_cards results_waste results_waste__white-waste" name="waste"></button>
@@ -114,7 +114,7 @@
             <p class="results_card results_card-source">Интернет</p>
           </div>
           <div class="results results_card">
-            <img src="<%=require('./images/background.jpg').default%>" alt="picture" class="results_card results_card-image">
+            <img src="images/background.jpg" alt="picture" class="results_card results_card-image">
             <button class="results_cards results_card-bookmark__invisible results_card-bookmark__white-flag" name="bookmark"></button>
             <p class="results_card results_card-author-expected__invisible">Войдите, чтобы сохранять статьи</p>
             <button class="results_cards results_waste results_waste__white-waste" name="waste"></button>
@@ -131,7 +131,7 @@
       </div>
       <div class="main about" id="about">
         <picture class="about about_foto">
-          <img src="<%=require('./images/test_image.jpg').default%>" alt="my-foto">
+          <img src="images/test_image.jpg" alt="my-foto">
         </picture>
         <div class="about about_text">
           <p class="about about_author">Об авторе</p>
@@ -144,9 +144,9 @@
       <p class="footer footer_copyright">&copy; Suroeva Tatiana</p>
       <a class="footer footer_main" href="./index.html">Главная</a>
       <a class="footer footer_yp" href="http://praktikum.yandex.ru" target="_blank">Яндекс.Практикум</a>
-      <a class="footer footer_github" href="http://www.github.com" target="_blank"><img src="<%=require('./images/github.svg').default%>" alt="github"></a>
-      <a class="footer footer_facebook footer_facebook__invisible" href="http://www.facebook.com" target="_blank"><img src="<%=require('./images/fb.svg').default%>" alt="facebook"></a>
+      <a class="footer footer_github" href="http://www.github.com" target="_blank"><img src="images/github.svg" alt="github"></a>
+      <a class="footer footer_facebook footer_facebook__invisible" href="http://www.facebook.com" target="_blank"><img src="images/fb.svg" alt="facebook"></a>
     </footer>
-    <script src="<%= htmlWebpackPlugin.files.chunks.main.entry %>"></script>
+    <script src="js/main.e381d23b7ef967e1c8a7.js"></script>
   </body>
 </html>

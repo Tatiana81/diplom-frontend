@@ -1,15 +1,3 @@
 .about__invisible {
   display: none;
 }
-
-@media screen and (max-width: 768px) {
-    .about__invisible {
-    display: none;
-  }
-}
-
-@media screen and (max-width: 320px) {
-    .about__invisible {
-      display: none;
-  }
-}

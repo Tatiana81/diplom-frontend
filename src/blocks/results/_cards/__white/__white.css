@@ -1,4 +1,4 @@
-@media screen and (max-width: 1440px) {
+@media screen and (min-width:768px){
   .results_cards__white {
     margin: 54px 104px;
   }
