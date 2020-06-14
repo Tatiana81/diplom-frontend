@@ -23,6 +23,13 @@ body {
   flex-direction: column;
 }
 
+@media screen and (min-width: 1440px){
+  body {
+    width: 1440px;
+    margin: auto;
+  }
+}
+
 button,
 button:active,
 button:focus {
