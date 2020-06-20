@@ -1,25 +1,47 @@
-@import url('./_exit-link/_exit-link.css');
-@import url('./_main-link/_main-link.css');
-@import url('./__invisible/__invisible.css');
-@import url('./__visible/__visible.css');
-@import url('./_saved-link/_saved-link.css');
-@import url('./__bordered/__bordered.css');
-@import url('./__unbordered/__unbordered.css');
-@import url('./__mobile-full/__mobile-full.css');
-@import url('./__mobile-short/__mobile-short.css');
-@import url('./__white-back/__white-back.css');
+@import url('./_with-bottom-radius/_with-bottom-radius.css');
+@import url('./_absolute/_absolute.css');
+@import url('./_relative/_relative.css');
 
 .header-white {
   display: flex;
   flex-direction: row;
-  position: relative;
-  color: #1A1B22;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background: #fff;
+  box-sizing: border-box;
+  border-bottom: 1px solid #d1d2d6;
+  z-index: 12;
+}
+
+@media screen and (max-width: 768px){
+  .header-white {
+      flex-wrap: unset;
+    }
+}
+
+
+@media screen and (max-width: 525px) {
+    .header-white{
+      flex-wrap: wrap;
+    }
+}
+
+@media screen and (max-width: 411px) {
+    .header-white {
+      height: 130px;
+    }
 }
 
 @media screen and (max-width: 320px) {
   .header-white {
+    height: 286px;
     flex-direction: column;
     flex-wrap: wrap;
     overflow: hidden;
+    justify-content: flex-start;
   }
 }
+
+
+
+

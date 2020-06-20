@@ -1,32 +1,20 @@
-@import url('./_login/_login.css');
-@import url('./_title/_title.css');
-@import url('./_subtitle/_subtitle.css');
-@import url('./_input/_input.css');
-@import url('./_error/_error.css');
-@import url('./_button/_button.css');
-@import url('./_alter/_alter.css');
-@import url('./_alter/_alter.css');
-@import url('./_alter-link/_alter-link.css');
-@import url('./_alter-text/_alter-text.css');
-@import url('./_close-button/_close-button.css');
-@import url('./_registration/_registration.css');
-@import url('./__invisible/__invisible.css');
-@import url('./_name-error/_name-error.css');
-@import url('./_exist-user-error/_exist-user-error.css');
-@import url('./_success-registration/_success-registration.css');
-@import url('./_success-text/_success-text.css');
-@import url('./_success-link/_success-link.css');
+@import url('./__login/__login.css');
+@import url('./__title/__title.css');
+@import url('./__subtitle/__subtitle.css');
+@import url('./__input/__input.css');
+@import url('./__error/__error.css');
+@import url('./__button/__button.css');
+@import url('./__alter/__alter.css');
+@import url('./__alter/__alter.css');
+@import url('./__alter-link/__alter-link.css');
+@import url('./__alter-text/__alter-text.css');
+@import url('./__close-button/__close-button.css');
+@import url('./__registration/__registration.css');
+@import url('./_invisible/_invisible.css');
+@import url('./_visible/_visible.css');
+@import url('./__name-error/__name-error.css');
+@import url('./__exist-user-error/__exist-user-error.css');
+@import url('./__success-registration/__success-registration.css');
+@import url('./__success-text/__success-text.css');
+@import url('./__success-link/__success-link.css');
 
-.popup {
-  display: flex;
-  border-radius: 16px;
-  z-index: 15;
-}
-
-.popup .popup_input{
-  border-radius: 0;
-}
-
-.popup .popup_button{
-  border-radius: 100px;
-}

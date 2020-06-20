@@ -1,9 +1,0 @@
-@media screen and (max-width: 320px) {
-  .header-black__mobile-full {
-    max-height: 286px;
-    border: 0px;
-    border-bottom-left-radius: 16px;
-    border-bottom-right-radius: 16px;
-    background: #1A1B22;
-  }
-}

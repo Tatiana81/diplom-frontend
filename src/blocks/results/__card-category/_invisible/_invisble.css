@@ -1,0 +1,15 @@
+.results__card-category_invisible {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .results__card-category_invisible {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .results__card-category_invisible {
+    display: none;
+  }
+}

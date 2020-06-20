@@ -1,8 +1,0 @@
-@media screen and (max-width: 320px) {
-  .header_main-link__visible {
-    display: inline-block;
-    height: 18px;
-    width: 288px;
-    margin: 20px auto 48px 16px;
-  }
-}

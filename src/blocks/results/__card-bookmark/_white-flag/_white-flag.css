@@ -1,0 +1,7 @@
+.results__card-bookmark_white-flag {
+  background: url('../images/white_flag.png') center no-repeat #fff;
+}
+
+.results__card-bookmark_white-flag:hover {
+  background: url('../images/hover_flag.jpg') center no-repeat #fff;
+}

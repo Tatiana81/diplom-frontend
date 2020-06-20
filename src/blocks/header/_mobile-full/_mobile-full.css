@@ -1,0 +1,9 @@
+@media screen and (max-width: 320px) {
+  .header_mobile-full {
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    background:#1A1B22;
+  }
+}

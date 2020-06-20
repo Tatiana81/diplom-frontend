@@ -1,0 +1,9 @@
+.loading_invisible {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .loading_invisible {
+    display: none;
+  }
+}

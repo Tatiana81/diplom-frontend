@@ -1,0 +1,4 @@
+.grey_visible {
+  z-index: 9;
+  opacity: 0.5;
+}

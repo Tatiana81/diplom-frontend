@@ -1,41 +1,21 @@
-
-@import url('./_title/_title.css');
-@import url('./_cards/_cards.css');
-@import url('./_card/_card.css');
-@import url('./_card-image/_card-image.css');
-@import url('./_card-bookmark/_card-bookmark.css');
-@import url('./_card-date/_card-date.css');
-@import url('./_button/_button.css');
-@import url('./_card-title/_card-title.css');
-@import url('./_card-preread/_card-preread.css');
-@import url('./_card-source/_card-source.css');
-@import url('./__invisible/__invisible.css');
-@import url('./_card-author-expected/_card-author-expected.css');
-@import url('./_card-delete/_card-delete.css');
-@import url('./_waste/_waste.css');
-@import url('./_card-category/_card-category.css');
+@import url('./__title/__title.css');
+@import url('./__cards/__cards.css');
+@import url('./__card/__card.css');
+@import url('./__card-image/__card-image.css');
+@import url('./__card-bookmark/__card-bookmark.css');
+@import url('./__card-date/__card-date.css');
+@import url('./__button/__button.css');
+@import url('./__card-title/__card-title.css');
+@import url('./__card-preread/__card-preread.css');
+@import url('./__card-source/__card-source.css');
+@import url('./_invisible/_invisible.css');
+@import url('./_visible/_visible.css');
+@import url('./__card-author-expected/__card-author-expected.css');
+@import url('./__card-delete/__card-delete.css');
+@import url('./__waste/__waste.css');
+@import url('./__card-category/__card-category.css');
 
 .results {
-  display: flex;
   flex-direction: column;
   background: #F5F6F7;
-}
-
-.results .results_cards, .results_cards__white {
-  flex-direction: row;
-}
-
-.results .results_card {
-  background: #fff;
-}
-
-.results .results_button__invisible, .results_title__invisible
- {
-  display: none;
-}
-
-@media screen and (max-width: 320px) {
-  .results .results_button {
-    background: #fff;
-  }
 }

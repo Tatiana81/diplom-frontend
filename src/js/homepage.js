@@ -1,7 +1,8 @@
+import "../vendor/normalize.css"
 import "../pages/homepage.css"
 
-const login_form_white = document.getElementById("login_form_white")
-const exit_button_black = document.getElementsByClassName("header-black-logged-in_exit-link")
+const login_form_white = document.getElementById("header-white")
+const exit_button_black = document.getElementsByClassName("header__exit-link")
 const saved_articles_link = document.getElementsByClassName("header_saved-link")
 const home = document.getElementById("home")
 const search = document.getElementById("search")
@@ -16,44 +17,6 @@ const delete_alert = document.getElementsByName("delete_alert")
 const mobile_menu_button = document.getElementsByName("mobile_menu_button")
 const grey = document.getElementById("grey")
 const header_line = document.querySelectorAll(".header_line")
-
-
-author_link.forEach(item=> {
-  item.addEventListener('click', function (event) {
-    event.preventDefault();
-    event.stopImmediatePropagation();
-    login_popup.classList.replace("popup_login__invisible", "popup_login");
-    login_popup.classList.replace("popup__invisible", "popup");
-    grey.classList.replace("grey__invisible","grey__visible")
-  })
-});
-
-close_buttons.forEach(function (item) {
-  item.addEventListener('click', function (event) {
-    event.preventDefault();
-    event.target.parentNode.classList.replace("popup", "popup__invisible")
-    grey.classList.replace("grey__visible", "grey__invisible")
-  })
-});
-
-enter_button.forEach(item => {
-  item.addEventListener('click', event => {
-    event.target.closest(".popup_login").classList.replace("popup", "popup__invisible")
-    logged_out_form_black.classList.replace("header-black", "header-black__invisible");
-    logged_in_form_black.classList.replace("header-black-logged-in__invisible", "header-black-logged-in__visible")
-    saved_articles_link.forEach(item => { item.classList.add("header_saved-link__visible") })
-    grey.classList.replace("grey__visible","grey__invisible")
-  })
-})
-
-exit_button_black.forEach(item => {
-  item.addEventListener('click', event => {
-    event.preventDefault();
-    event.stopImmediatePropagation();
-    logged_out_form_black.classList.replace("header-black__invisible","header-black");
-    logged_in_form_black.classList.replace("header-black-logged-in__visible","header-black-logged-in__invisible")
-  })
-})
 
 saved_articles_link.forEach(item => {
   item.addEventListener('click', event => {
@@ -124,112 +87,32 @@ search_action.forEach(item => {
   })
 })
 
-bookmarks.forEach(item => {
-  item.addEventListener('click', event => {
-    if (event.target.classList.contains("results_card-bookmark__blue-flag")) {
-      event.target.classList.replace("results_card-bookmark__blue-flag", "results_card-bookmark__white-flag")
-    }
-    else {
-      if (logged_out_form_black.classList.contains("header-black")) {
-        event.target.nextElementSibling.classList.replace("results_card-author-expected__invisible", "results_card-author-expected")
-        setTimeout(() => {
-          event.target.nextElementSibling.classList.replace("results_card-author-expected", "results_card-author-expected__invisible")
-        }, 3000)
-      }
-        else event.target.classList.replace("results_card-bookmark__white-flag", "results_card-bookmark__blue-flag")
-      }
-  })
-})
-
 waste.forEach(item => {
   item.addEventListener('mouseover', event => {
-    event.target.classList.replace("results_waste__white-waste","results_waste__black-waste")
-    event.target.nextSibling.nextElementSibling.classList.replace("results_card-delete__invisible","results_card-delete")
+    event.target.classList.replace("results__waste_white-waste","results__waste_black-waste")
+    event.target.nextSibling.nextElementSibling.classList.replace("results__card-delete_invisible","results__card-delete")
   })
   item.addEventListener('mouseout', event => {
-    event.target.classList.replace("results_waste__black-waste","results_waste__white-waste")
-  })
-})
-
-alter_link.forEach(item => {
-  item.addEventListener('click', event => {
-    if (event.target.textContent === "Зарегистрироваться") {
-      login_popup.classList.replace("popup_login", "popup_login__invisible")
-      login_popup.classList.replace("popup", "popup__invisible")
-      registration_popup.classList.replace("popup__invisible", "popup")
-    }
-    else {
-      login_popup.classList.replace("popup_login__invisible", "popup_login")
-      login_popup.classList.replace("popup__invisible", "popup")
-      registration_popup.classList.replace("popup", "popup__invisible")
-    }
-  })
-})
-
-reg_button.forEach(item => {
-  item.addEventListener('click', event => {
-    event.preventDefault();
-    registration_popup.classList.replace("popup", "popup__invisible")
-    success_reg.classList.replace("popup__invisible", "popup")
-  })
-})
-
-enter_after_registration.forEach(item => {
-  item.addEventListener('click', event => {
-    event.preventDefault();
-    success_reg.classList.replace("popup", "popup__invisible")
-    login_popup.classList.replace("popup_login__invisible", "popup_login")
-    login_popup.classList.replace("popup__invisible", "popup")
+    event.target.classList.replace("results__waste_black-waste","results__waste_white-waste")
   })
 })
 
 mobile_menu_button.forEach(item => {
   item.addEventListener('click', event => {
-    if (event.target.classList.contains("header_mobile-menu__black-stripes")) {
-      event.target.classList.replace("header_mobile-menu__black-stripes", "header_mobile-menu__black-cross");
-      login_form_white.classList.replace("header-white__mobile-short", "header-white__mobile-full")
-      login_form_white.classList.replace("header-white__bordered", "header-white__unbordered")
-      header_line.forEach(item => { item.classList.remove("header_line__invisible")})
+    if (event.target.classList.contains("header__mobile-menu_black-stripes")) {
+      grey.classList.replace('grey_invisible','grey_visible')
+      event.target.classList.replace("header__mobile-menu_black-stripes", "header__mobile-menu_black-cross");
+      login_form_white.classList.replace("header_mobile-short", "header_mobile-full-white")
+      login_form_white.classList.add('header-white_with-bottom-radius')
+      login_form_white.classList.replace('header-white_relative','header-white_absolute')
     }
     else {
-      event.target.classList.replace("header_mobile-menu__black-cross", "header_mobile-menu__black-stripes");
-      header_line.forEach(item => { item.classList.add("header_line__invisible")})
-      login_form_white.classList.replace("header-white__mobile-full", "header-white__mobile-short")
-      login_form_white.classList.replace("header-white__unbordered", "header-white__bordered")
-
-    }
-    if (event.target.classList.contains("header_mobile-menu__white-stripes")) {
-      event.target.classList.replace("header_mobile-menu__white-stripes", "header_mobile-menu__white-cross")
-      header_line.forEach(item => { item.classList.remove("header_line__invisible")})
-      if (event.target.parentNode.classList.contains('header-black')) {
-        logged_out_form_black.classList.replace("header-black__mobile-short", "header-black__mobile-full")
-
-      }
-      else {
-        logged_in_form_black.classList.replace("header-black-logged-in__mobile-short", "header-black-logged-in__mobile-full")
-        header_line.forEach(item => { item.classList.remove("header_line__invisible")})
-        logged_in_main_link.forEach(item => {
-          item.classList.replace("header_main-link__invisible", "header_main-link__visible")
-        })
-        saved_articles_link.forEach(item => {
-          item.classList.replace("header_saved-link__invisible", "header_saved-link__visible")
-          item.classList.remove("header_saved-link__passive")
-        })
-        exit_button_black.forEach(item => {
-          item.classList.replace("header-black-logged-in_exit-link__invisible", "header-black-logged-in_exit-link__visible")
-        })
-    }
-    }
-    else {
-      event.target.classList.replace("header_mobile-menu__white-cross", "header_mobile-menu__white-stripes")
-      if (event.target.parentNode.classList.contains('header-black')) {
-        logged_out_form_black.classList.replace("header-black__mobile-full", "header-black__mobile-short")
-
-      }
-      else {
-        logged_in_form_black.classList.replace("header-black-logged-in__mobile-full", "header-black-logged-in__mobile-short")
-
-    }
+      grey.classList.replace('grey_visible','grey_invisible')
+      event.target.classList.replace("header__mobile-menu_black-cross", "header__mobile-menu_black-stripes");
+      login_form_white.classList.replace("header_mobile-full-white", "header_mobile-short")
+      login_form_white.classList.replace("header_unbordered", "header_bordered")
+      login_form_white.classList.remove('header-white_with-bottom-radius')
+      login_form_white.classList.replace('header-white_absolute','header-white_relative')
     }
     })
 })

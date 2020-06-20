@@ -1,8 +1,8 @@
-@import url('./__invisible/__invisible.css');
-@import url('./__visible/__visible.css');
+@import url('./_invisible/_invisible.css');
+@import url('./_visible/_visible.css');
 
 .grey {
-  position: absolute;
+  position: fixed;
   background: #000;
   width: 100%;
   height: 100%;

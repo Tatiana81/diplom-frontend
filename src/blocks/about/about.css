@@ -1,8 +1,8 @@
-@import url('./_foto/_foto.css');
-@import url('./_author/_author.css');
-@import url('./_description/_description.css');
-@import url('./_text/_text.css');
-@import url('./__invisible/__invisible.css');
+@import url('./__foto/__foto.css');
+@import url('./__author/__author.css');
+@import url('./__description/__description.css');
+@import url('./__text/__text.css');
+@import url('./_invisible/_invisible.css');
 
 .about {
   display: flex;
@@ -17,7 +17,8 @@
   }
 }
 
-@media screen and (max-width: 320px) {
+
+@media screen and (max-width: 450px) {
   .about {
     flex-direction: column;
   }

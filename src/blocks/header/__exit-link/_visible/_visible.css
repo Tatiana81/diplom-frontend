@@ -1,0 +1,8 @@
+@media screen and (max-width: 320px) {
+  .header__exit-link_visible {
+    display: block;
+    width: 288px;
+    margin: 0 16px 24px 16px;
+    text-align: center;
+  }
+}

@@ -1,0 +1,32 @@
+.header-search__subtitle {
+  width: 608px;
+  max-height: 48px;
+  margin: 0 auto 64px auto;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 24px;
+  color: #FFFFFF;
+  background: transparent;
+  padding-right: 90px;
+  box-sizing: border-box;
+}
+
+@media screen and (max-width: 768px) {
+  .header-search__subtitle {
+    max-height: unset;
+    width: 58.854166666%;
+    margin: 0 auto 48px auto;
+    padding: 0;
+    box-sizing: unset;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .header-search__subtitle {
+    width: 288px;
+    height: 72px;
+    margin: 0 16px 122px 16px;
+  }
+}

@@ -1,0 +1,21 @@
+.about__text {
+  width: 41.666666%;
+  max-width: 600px;
+  margin: 131px 0 0 0;
+  flex-direction: column;
+}
+
+@media screen and (max-width: 768px) {
+  .about__text {
+    width: 55.208333333%;
+    flex-wrap: wrap;
+    margin: 40px auto 0 0;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .about__text {
+    width: 288px;
+    margin: 0 auto 80px auto;
+  }
+}

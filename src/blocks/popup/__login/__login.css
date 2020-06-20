@@ -1,0 +1,39 @@
+@import url('./_invisible/_invisible.css');
+@import url('./_visible/_visible.css');
+
+.popup__login {
+  flex-direction: column;
+  position: fixed;
+  background: #fff;
+  width: 430px;
+  height: 380px;
+  left: calc((100vw - 430px) / 2);
+  top: 207px;
+  z-index: 15;
+  border-radius: 16px;
+}
+
+@media screen and (max-width: 768px) {
+  .popup__login {
+    width: 430px;
+    left: calc((100vw - 430px) / 2);
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .popup__login {
+    height: 520px;
+    width: 100vw;
+    left: 0;
+    top: 56px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .popup__login {
+    height: 520px;
+    width: 320px;
+    left: 0;
+    top: 56px;
+  }
+}

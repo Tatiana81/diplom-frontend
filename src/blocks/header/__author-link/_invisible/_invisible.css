@@ -1,0 +1,5 @@
+@media screen and (max-width: 320px){
+  .header__author-link_invisible {
+    display: none;
+  }
+}

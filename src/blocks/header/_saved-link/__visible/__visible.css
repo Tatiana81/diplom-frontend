@@ -1,8 +1,0 @@
-@media screen and (max-width: 320px) {
-  .header_saved-link__visible {
-    display: block;
-    height: 18px;
-    width: 288px;
-    margin: 0 16px 22px 16px;
-  }
-}

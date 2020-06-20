@@ -1,0 +1,57 @@
+@import url('./_invisible/_invisible.css');
+
+.results__button {
+  z-index: 2;
+  width: 288px;
+  height: 64px;
+  margin: 48px auto 80px auto;
+  justify-content: center;
+  align-items: center;
+  background: #FFFFFF;
+  border-radius: 80px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  color: #1A1B22;
+  box-sizing: border-box;
+}
+
+.results__button:hover {
+  margin: 48px auto 80px auto;
+  background: rgb(230,230,230);
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .results__button {
+    width: 240px;
+    height: 56px;
+    margin: 24px 264px 40px 34.375%;
+  }
+
+  .results__button:hover {
+    width: 240px;
+    height: 56px;
+    margin: 24px 264px 40px 34.375%;
+    background: rgb(230,230,230);
+    cursor: pointer;
+  }
+}
+
+@media screen and (max-width: 376px) {
+  .results__button {
+    width: 288px;
+    height: 56px;
+    margin: 7px 16px 32px 16px;
+    background: #fff;
+  }
+  .results__button:hover {
+    width: 288px;
+    height: 56px;
+    margin: 7px 16px 32px 16px;
+    background: rgb(230,230,230);
+      cursor: pointer;
+  }
+}

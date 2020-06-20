@@ -1,8 +1,0 @@
-@media screen and (max-width: 320px) {
-  .header-black-logged-in_exit-link__visible {
-    display: block;
-    width: 288px;
-    margin: 0 16px 24px 16px;
-    text-align: center;
-  }
-}

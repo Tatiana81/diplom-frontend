@@ -11,141 +11,140 @@
     <link rel="icon" type="image/png" href="<%=require('./images/favicon.png').default%>">
   </head>
   <body>
-  <div class="body grey grey__invisible" id="grey"></div>
-  <div class="popup__invisible popup_login__invisible" id="popup_login">
-    <img src="<%=require('./images/close.svg').default%>" alt="close" class="popup popup_close-button">
-    <p class="popup popup_title">Вход</p>
-    <p class="popup popup_subtitle">Email</p>
-    <input type="email" class="popup popup_input" placeholder="Введите почту">
-    <p class="popup popup_error">Error</p>
-    <p class="popup popup_subtitle">Пароль</p>
-    <input type="password" class="popup popup_input" placeholder="Введите пароль">
-    <p class="popup popup_error">Error</p>
-    <button type="submit" class="popup popup_button" name="enter_button">Войти</button>
-    <div class="popup popup_alter">
-      <p class="popup popup_alter-text"> или </p>
-      <button class="popup popup_alter-link" name="alter_link">Зарегистрироваться</button>
+  <div class="grey grey_invisible" id="grey"></div>
+  <form class="popup_invisible popup__login" id="popup_login" novalidate>
+    <img src="<%=require('./images/close.svg').default%>" alt="close" class="popup__close-button">
+    <p class="popup__title">Вход</p>
+    <p class="popup__subtitle">Email</p>
+    <input type="email" class="popup__input" placeholder="Введите почту">
+    <p class="popup__error popup__error_invisible">Неправильный формат email</p>
+    <p class="popup__subtitle">Пароль</p>
+    <input type="password" class="popup__input" placeholder="Введите пароль" minlength="8">
+    <p class="popup__error popup__error_invisible">Длина пароля не менее 8 символов</p>
+    <button type="submit" class="popup__button" name="enter_button">Войти</button>
+    <div class="popup__alter">
+      <p class="popup__alter-text"> или </p>
+      <button class="popup__alter-link">Зарегистрироваться</button>
     </div>
-  </div>
-  <div class="popup__invisible popup_registration" id="popup_registration">
-    <img src="<%=require('./images/close.svg').default%>" alt="close" class="popup popup_close-button">
-    <p class="popup popup_title">Регистрация</p>
-    <p class="popup popup_subtitle">Email</p>
-    <input type="email" tabindex="1" class="popup popup_input" placeholder="Введите почту">
-    <p class="popup popup_error popup_error__invisible">Error</p>
-    <p class="popup popup_subtitle">Пароль</p>
-    <input type="password" tabindex="2" class="popup popup_input" placeholder="Введите пароль">
-    <p class="popup popup_error">Error</p>
-    <p class="popup popup_subtitle">Имя</p>
-    <input type="text" tabindex="3" class="popup popup_input" placeholder="Введите своё имя">
-    <p class="popup popup_name-error">Error</p>
-    <p class="popup popup_exist-user-error">Такой пользователь уже есть</p>
-    <button class="popup popup_button" name="reg_button">Зарегистрироваться</button>
-    <div class="popup popup_alter">
-      <p class="popup popup_alter-text"> или </p>
-      <button class="popup popup_alter-link" name="alter_link">Войти</button>
+  </form>
+  <form class="popup__registration popup_invisible" id="popup_registration" novalidate>
+    <img src="<%=require('./images/close.svg').default%>" alt="close" class="popup__close-button">
+    <p class="popup__title">Регистрация</p>
+    <p class="popup__subtitle">Email</p>
+    <input type="email" tabindex="1" class="popup__input" placeholder="Введите почту">
+    <p class="popup__error popup__error_invisible">Неправильный формат email</p>
+    <p class="popup__subtitle">Пароль</p>
+    <input type="password" tabindex="2" class="popup__input" placeholder="Введите пароль" minlength="8">
+    <p class="popup__error popup__error_invisible">Длина пароля не менее 8 символов</p>
+    <p class="popup__subtitle">Имя</p>
+    <input type="text" tabindex="3" class="popup__input" placeholder="Введите своё имя" minlength="2" maxlength="30">
+    <p class="popup__error popup__error_invisible">Имя должно содержать от 2 до 30 символов</p>
+    <p class="popup__exist-user-error popup__exist-user-error_invisible">Такой пользователь уже есть</p>
+    <button class="popup__button" name="reg_button">Зарегистрироваться</button>
+    <div class="popup__alter">
+      <p class="popup__alter-text"> или </p>
+      <button class="popup__alter-link" name="alter_link">Войти</button>
     </div>
+  </form>
+  <div class="popup__success-registration popup_invisible" id="popup_success_registration">
+    <img src="<%=require('./images/close.svg').default%>" alt="close" class="popup__close-button">
+    <p class="popup__success-text">Пользователь успешно зарегистрирован</p>
+    <button class="popup__success-link">Выполнить вход</button>
   </div>
-  <div class="popup__invisible popup_success-registration" id="popup_success_registration">
-    <img src="<%=require('./images/close.svg').default%>" alt="close" class="popup popup_close-button">
-    <p class="popup_title popup_success-text">Пользователь успешно зарегистрирован</p>
-    <button class="popup popup_success-link">Выполнить вход</button>
-  </div>
-    <header class="header header__black">
-      <div class="header header-black header-black__mobile-short" id="logged_out_form_black">
-        <h1 class="header-black header_title">NewsExplorer</h1>
-        <button class="header header_mobile-menu header_mobile-menu__white-stripes header_mobile-menu__invisible" name="mobile_menu_button"></button>
-        <div class="header header_line header_line__white header_line__invisible"></div>
-        <a href="index.html" class="header-black header_main-link header_main-link__active">Главная</a>
-        <button class="header-black header-black_author-link" name="author-link">Авторизоваться</button>
+  <header class="header">
+    <div class="header-black header-black_logged-out header_mobile-short header-black_bordered" id="header-black">
+      <h1 class="header__title header__title_white">NewsExplorer</h1>
+      <button class="header__mobile-menu header__mobile-menu_white-stripes header__mobile-menu_invisible" name="mobile_menu_button"></button>
+      <div class="header__line header__line_white"></div>
+      <ul class="header__menu header__menu_white">
+        <li class="header__menu-subtitle">
+          <a href="index.html" class="header__main-link header__main-link_white header__main-link_active header__main-link_logged-out">Главная</a>
+        </li>
+        <li class="header__menu-subtitle header__menu-subtitle_author">
+          <button class="header__author-link" id="author_link">Авторизоваться</button>
+        </li>
+        <li class="header__menu-subtitle header__menu-subtitle_invisible header__menu-subtitle_saved">
+          <a href="homepage.html" class="header__saved-link header-black_visible header__saved-link_passive">Сохранённые&nbsp;статьи</a></li>
+        <li class="header__menu-subtitle header__menu-subtitle_invisible header__menu-subtitle_exit">
+          <a href="index.html" class="header__exit-link header__exit-link_white">Грета</a></li>
+      </ul>
+    </div>
+    <div class="header-search header-search_header-line" id="search">
+      <h2 class="header-search__title">Что в мире творится?</h2>
+      <p class="header-search__subtitle">Находите самые свежие статьи на любую тему и сохраняйте в своём личном кабинете.</p>
+      <div class="header-search__search-group">
+        <input class="header-search__input" placeholder="Введите тему новости" id="search_input">
+        <button class="header-search__button" name="search_action">Искать</button>
       </div>
-      <div class="header header-black-logged-in__invisible header-black-logged-in  header-black-logged-in__mobile-short" id="logged_in_form_black">
-         <h1 class="header-black-logged-in header-black-logged-in__visible header_title">NewsExplorer</h1>
-        <button class="header header_mobile-menu header_mobile-menu__white-stripes header_mobile-menu__invisible" name="mobile_menu_button"></button>
-        <div class="header header_line header_line__white header_line__invisible"></div>
-        <a href="index.html" class="header-black-logged-in header-black-logged-in__visible header_main-link header_main-link__active header_main-link__invisible">Главная</a>
-        <a href="homepage.html" class="header-black-logged-in header-black-logged-in__visible  header_saved-link header_saved-link__passive header_saved-link__invisible">Сохранённые статьи</a>
-        <a href="index.html" class="header-black-logged-in header-black-logged-in__visible  header-black-logged-in_exit-link header-black-logged-in_exit-link__invisible">Грета</a>
-      </div>
-      <div class="header header-search header-search__header-line" id="search">
-        <h2 class="header-search header-search_title">Что в мире творится?</h2>
-        <p class="header-search header-search_subtitle">Находите самые свежие статьи на любую тему и сохраняйте в своём личном кабинете.</p>
-        <div class="header-search header-search_search-group">
-          <input class="header-search header-search_input" placeholder="Введите тему новости" id="search_input">
-          <button class="header-search header-search_button" name="search_action">Искать</button>
-        </div>
-      </div>
+    </div>
     </header>
     <main class="main">
-      <div class="main loading__invisible" id="loading">
-        <i class="loading__invisible loading_circle-preloader"></i>
-        <p class="loading__invisible loading_title">Идет поиск новостей...</p>
+      <div class="loading loading_invisible" id="loading">
+        <i class="loading__circle-preloader loading_invisible"></i>
+        <p class="loading__title loading_invisible ">Идет поиск новостей...</p>
       </div>
-      <div class="main not-found__invisible" id="not-found">
-        <img src="<%=require('./images/not_found.svg').default%>" alt="not-found" class="not-found not-found_image">
-        <p class="not-found not-found_title">Ничего не найдено</p>
-        <p class="not-found not-found_subtitle">К сожалению по вашему запросу ничего&nbsp; не&nbsp;найдено.</p>
+      <div class="not-found not-found_invisible" id="not-found">
+        <img src="<%=require('./images/not_found.svg').default%>" alt="not-found" class="not-found__image">
+        <p class="not-found__title">Ничего не найдено</p>
+        <p class="not-found__subtitle">К сожалению по вашему запросу ничего&nbsp; не&nbsp;найдено.</p>
       </div>
-      <div class="main results__invisible" id="results">
-        <p class="results results_title__invisible" id="results_title">Результаты поиска</p>
-        <div class="results results_cards results_cards__white">
-          <div class="results results_card">
-            <img src="<%=require('./images/background.jpg').default%>" alt="picture" class="results_card results_card-image">
-            <button class="results_cards results_card-bookmark__invisible results_card-bookmark__white-flag" name="bookmark"></button>
-            <p class="results_card results_card-author-expected__invisible">Войдите, чтобы сохранять статьи</p>
-            <button class="results_cards results_waste results_waste__white-waste" name="waste"></button>
-            <button class="results_card results_card-delete__invisible" name="delete_alert">Убрать из сохраненных</button>
-            <p class="results_card results_card-category__invisible">Природа</p>
-            <p class="results_card results_card-date">05.06.2020</p>
-            <p class="results_card results_card-title">Национальное достояние &ndash; парки</p>
-            <p class="results_card results_card-preread">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.</p>
-            <p class="results_card results_card-source">Интернет</p>
+      <div class="results results_invisible" id="results">
+        <p class="results__title results__title_invisible" id="results_title">Результаты поиска</p>
+        <div class="results__cards results__cards_black">
+          <div class="results__card">
+            <img src="<%=require('./images/background.jpg').default%>" alt="picture" class="results__card-image">
+            <button class="results__card-bookmark results__card-bookmark_invisible results__card-bookmark_white-flag" name="bookmark"></button>
+            <p class="results__card-author-expected results__card-author-expected_invisible">Войдите, чтобы сохранять статьи</p>
+            <button class="results__waste results__waste_white-waste" name="waste"></button>
+            <button class="results__card-delete results__card-delete_invisible" name="delete_alert">Убрать из сохраненных</button>
+            <p class="results__card-category results__card-category_invisible">Природа</p>
+            <p class="results__card-date">05.06.2020</p>
+            <p class="results__card-title">Национальное достояние &ndash; парки</p>
+            <p class="results__card-preread">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.</p>
+            <p class="results__card-source">Интернет</p>
           </div>
-          <div class="results results_card">
-            <img src="<%=require('./images/background.jpg').default%>" alt="picture" class="results_card results_card-image">
-            <button class="results_cards results_card-bookmark__invisible results_card-bookmark__white-flag" name="bookmark"></button>
-            <p class="results_card results_card-author-expected__invisible">Войдите, чтобы сохранять статьи</p>
-            <button class="results_cards results_waste results_waste__white-waste" name="waste"></button>
-            <button class="results_card results_card-delete__invisible" name="delete_alert">Убрать из сохраненных</button>
-            <p class="results_card results_card-category__invisible">Природа</p>
-            <p class="results_card results_card-date">05.06.2020</p>
-            <p class="results_card results_card-title">Национальное достояние &ndash; парки</p>
-            <p class="results_card results_card-preread">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.</p>
-            <p class="results_card results_card-source">Интернет</p>
+          <div class="results__card">
+            <img src="<%=require('./images/background.jpg').default%>" alt="picture" class="results__card-image">
+            <button class="results__card-bookmark results__card-bookmark_invisible results__card-bookmark_white-flag" name="bookmark"></button>
+            <p class="results__card-author-expected results__card-author-expected_invisible">Войдите, чтобы сохранять статьи</p>
+            <button class="results__waste results__waste_invisible results__waste_white-waste"></button>
+            <button class="results__card-delete results__card-delete_invisible" name="delete_alert">Убрать из сохраненных</button>
+            <p class="results__card-category results__card-category_invisible">Природа</p>
+            <p class="results__card-date">05.06.2020</p>
+            <p class="results__card-title">Национальное достояние &ndash; парки</p>
+            <p class="results__card-preread">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.</p>
+            <p class="results__card-source">Интернет</p>
           </div>
-          <div class="results results_card">
-            <img src="<%=require('./images/background.jpg').default%>" alt="picture" class="results_card results_card-image">
-            <button class="results_cards results_card-bookmark__invisible results_card-bookmark__white-flag" name="bookmark"></button>
-            <p class="results_card results_card-author-expected__invisible">Войдите, чтобы сохранять статьи</p>
-            <button class="results_cards results_waste results_waste__white-waste" name="waste"></button>
-            <button class="results_card results_card-delete__invisible" name="delete_alert">Убрать из сохраненных</button>
-            <p class="results_card results_card-category__invisible">Природа</p>
-            <p class="results_card results_card-date">05.06.2020</p>
-            <p class="results_card results_card-title">Национальное достояние &ndash; парки</p>
-            <p class="results_card results_card-preread">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.</p>
-            <p class="results_card results_card-source">Интернет</p>
+          <div class="results__card">
+            <img src="<%=require('./images/background.jpg').default%>" alt="picture" class="results__card-image">
+            <button class="results__card-bookmark results__card-bookmark_invisible results__card-bookmark_white-flag" name="bookmark"></button>
+            <p class="results__card-author-expected results__card-author-expected_invisible">Войдите, чтобы сохранять статьи</p>
+            <button class="results__waste results__waste_white-waste" name="waste"></button>
+            <button class="results__card-delete results__card-delete_invisible" name="delete_alert">Убрать из сохраненных</button>
+            <p class="results__card-category results__card-category_invisible">Природа</p>
+            <p class="results__card-date">05.06.2020</p>
+            <p class="results__card-title">Национальное достояние &ndash; парки</p>
+            <p class="results__card-preread">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.</p>
+            <p class="results__card-source">Интернет</p>
           </div>
-
         </div>
-        <button class="results results_button__invisible" id="results_button">Показать еще</button>
+        <button class="results__button results__button_invisible" id="results_button">Показать еще</button>
       </div>
-      <div class="main about" id="about">
-        <picture class="about about_foto">
-          <img src="<%=require('./images/test_image.jpg').default%>" alt="my-foto">
-        </picture>
-        <div class="about about_text">
-          <p class="about about_author">Об авторе</p>
-          <p class="about about_description">Это блок с описанием автора проекта. Здесь следует указать, как вас зовут, чем вы занимаетесь, какими технологиями разработки владеете.</p>
-          <p class="about about_description">Также можно рассказать о процессе обучения в Практикуме, чему вы тут научились, и чем можете помочь потенциальным заказчикам.</p>
+      <div class="about" id="about">
+          <img class="about__foto" src="<%=require('./images/test_image.jpg').default%>" alt="my-foto">
+        <div class="about__text">
+          <p class="about__author">Об авторе</p>
+          <p class="about__description">Это блок с описанием автора проекта. Здесь следует указать, как вас зовут, чем вы занимаетесь, какими технологиями разработки владеете.</p>
+          <p class="about__description">Также можно рассказать о процессе обучения в Практикуме, чему вы тут научились, и чем можете помочь потенциальным заказчикам.</p>
         </div>
       </div>
     </main>
     <footer class="footer">
-      <p class="footer footer_copyright">&copy; Suroeva Tatiana</p>
-      <a class="footer footer_main" href="./index.html">Главная</a>
-      <a class="footer footer_yp" href="http://praktikum.yandex.ru" target="_blank">Яндекс.Практикум</a>
-      <a class="footer footer_github" href="http://www.github.com" target="_blank"><img src="<%=require('./images/github.svg').default%>" alt="github"></a>
-      <a class="footer footer_facebook footer_facebook__invisible" href="http://www.facebook.com" target="_blank"><img src="<%=require('./images/fb.svg').default%>" alt="facebook"></a>
+      <p class="footer__copyright">&copy; Suroeva Tatiana</p>
+        <a class="footer__main" href="./index.html">Главная</a>
+        <a class="footer__yp" href="http://praktikum.yandex.ru" target="_blank">Яндекс.Практикум</a>
+        <a class="footer__github" href="http://www.github.com" target="_blank"><img src="<%=require('./images/github.svg').default%>" alt="github"></a>
+        <a class="footer__facebook" href="http://www.facebook.com" target="_blank"><img src="<%=require('./images/fb.svg').default%>" alt="facebook"></a>
     </footer>
     <script src="<%= htmlWebpackPlugin.files.chunks.main.entry %>"></script>
   </body>

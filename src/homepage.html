@@ -11,75 +11,78 @@
     <link rel="icon" type="image/png" href="<%=require('./images/favicon.png').default%>">
   </head>
   <body>
-    <header class="header header__white">
-      <div class="header__white header-white header-white__white-back header-white__bordered  header-white__mobile-short" id="login_form_white">
-        <h1 class="header-white header-white__visible header_title">NewsExplorer</h1>
-        <button class="header header_mobile-menu header_mobile-menu__black-stripes header_mobile-menu__invisible" name="mobile_menu_button"></button>
-        <div class="header header_line header_line__black header_line__invisible"></div>
-        <a href="index.html" class="header-white header-white__visible header-white_main-link">Главная</a>
-        <button class="header-white header-white__visible header-white_saved-link">Сохранённые статьи</button>
-        <a href="index.html" class="header-white header-white__visible header-white_exit-link">Грета</a>
+<div class="grey grey_invisible" id="grey"></div>
+  <header class="header header_white">
+    <div class="header-white header_mobile-short header-white_relative" id="header-white">
+      <h1 class="header__title header__title_black">NewsExplorer</h1>
+      <button class="header__mobile-menu header__mobile-menu_black-stripes header__mobile-menu_invisible" name="mobile_menu_button"></button>
+      <div class="header__line header__line_black"></div>
+      <ul class="header__menu header__menu_black">
+        <li class="header__menu-subtitle header__menu-subtitle_visible header__menu-subtitle_main">
+          <a href="index.html" class="header__main-link header__main-link_black">Главная</a>
+        </li>
+        <li class="header__menu-subtitle header__menu-subtitle_saved">
+          <a href="homepage.html" class="header__saved-link header__saved-link_active-black">Сохранённые&nbsp;статьи</a></li>
+        <li class="header__menu-subtitle header__menu-subtitle_exit">
+          <a href="index.html" class="header__exit-link header__exit-link_black">Грета</a></li>
+      </ul>
+    </div>
+    <div class="header-home header-home_column" id="home">
+      <p class="header-home__pretitle">Сохранённые статьи</p>
+      <p class="header-home__title">Грета, у вас 5 сохранённых статей</p>
+      <div class="header-home__keys-field">
+        <p class="header-home__subtitle">По ключевым словам:</p>
+        <p class="header-home__keys"> Природа, Тайга и 2 другим</p>
       </div>
-      <div class="header header-home__column header-home" id="home">
-        <p class="header-home header-home_pretitle">Сохранённые статьи</p>
-        <p class="header-home header-home_title">Грета, у вас 5 сохранённых статей</p>
-        <div class="header-home header-home_keys-field">
-          <p class="header-home header-home_subtitle">По ключевым словам:</p>
-          <p class="header-home header-home_keys"> Природа, Тайга и 2 другим</p>
+    </div>
+  </header>
+      <main class="results" id="results">
+        <div class="results__cards results__cards_white">
+          <div class="results__card">
+            <img src="<%=require('./images/background.jpg').default%>" alt="picture" class="results__card-image">
+            <button class="results__card-bookmark results__card-bookmark_invisible results__card-bookmark_white-flag" name="bookmark"></button>
+            <button class="results__waste results__waste_white-waste" name="waste"></button>
+            <button class="results__card-delete results__card-delete_invisible" name="delete_alert">Убрать из сохраненных</button>
+            <p class="results__card-category">Природа</p>
+            <p class="results__card-date">05.06.2020</p>
+            <p class="results__card-title">Национальное достояние &ndash; парки</p>
+            <p class="results__card-preread">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.</p>
+            <p class="results__card-source">Интернет</p>
+          </div>
+          <div class="results__card">
+            <img src="<%=require('./images/background.jpg').default%>" alt="picture" class="results__card-image">
+            <button class="results__card-bookmark results__card-bookmark_invisible results__card-bookmark_white-flag" name="bookmark"></button>
+            <button class="results__waste results__waste_white-waste" name="waste"></button>
+            <button class="results__card-delete results__card-delete_invisible" name="delete_alert">Убрать из сохраненных</button>
+            <p class="results__card-category">Природа</p>
+            <p class="results__card-date">05.06.2020</p>
+            <p class="results__card-title">Национальное достояние &ndash; парки</p>
+            <p class="results__card-preread">aaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaa В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.</p>
+            <p class="results__card-source">Интернет</p>
+          </div>
+          <div class="results__card">
+            <img src="<%=require('./images/background.jpg').default%>" alt="picture" class="results__card-image">
+            <button class="results__card-bookmark results__card-bookmark_invisible results__card-bookmark_white-flag" name="bookmark"></button>
+            <button class="results__waste results__waste_white-waste" name="waste"></button>
+            <button class="results__card-delete results__card-delete_invisible" name="delete_alert">Убрать из сохраненных</button>
+            <p class="results__card-category">Природа</p>
+            <p class="results__card-date">05.06.2020</p>
+            <p class="results__card-title">Национальное достояние &ndash; парки</p>
+            <p class="results__card-preread">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.</p>
+            <p class="results__card-source">Интернет</p>
+          </div>
         </div>
-      </div>
-    </header>
-    <main class="main">
-      <div class="main results" id="results">
-        <div class="results results_cards results_cards__white">
-          <div class="results results_card">
-            <img src="<%=require('./images/background.jpg').default%>" alt="picture" class="results_card results_card-image">
-            <button class="results_cards results_card-bookmark__invisible results_card-bookmark__white-flag" name="bookmark"></button>
-            <p class="results_card results_card-author-expected__invisible">Войдите, чтобы сохранять статьи</p>
-            <button class="results_cards results_waste results_waste__white-waste" name="waste"></button>
-            <button class="results_card results_card-delete__invisible" name="delete_alert">Убрать из сохраненных</button>
-            <p class="results_card results_card-category">Природа</p>
-            <p class="results_card results_card-date">05.06.2020</p>
-            <p class="results_card results_card-title">Национальное достояние &ndash; парки</p>
-            <p class="results_card results_card-preread">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.</p>
-            <p class="results_card results_card-source">Интернет</p>
-          </div>
-          <div class="results results_card">
-            <img src="<%=require('./images/background.jpg').default%>" alt="picture" class="results_card results_card-image">
-            <button class="results_cards results_card-bookmark__invisible results_card-bookmark__white-flag" name="bookmark"></button>
-            <p class="results_card results_card-author-expected__invisible">Войдите, чтобы сохранять статьи</p>
-            <button class="results_cards results_waste results_waste__white-waste" name="waste"></button>
-            <button class="results_card results_card-delete__invisible" name="delete_alert">Убрать из сохраненных</button>
-            <p class="results_card results_card-category">Природа</p>
-            <p class="results_card results_card-date">05.06.2020</p>
-            <p class="results_card results_card-title">Национальное достояние &ndash; парки</p>
-            <p class="results_card results_card-preread">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.</p>
-            <p class="results_card results_card-source">Интернет</p>
-          </div>
-          <div class="results results_card">
-            <img src="<%=require('./images/background.jpg').default%>" alt="picture" class="results_card results_card-image">
-            <button class="results_cards results_card-bookmark__invisible results_card-bookmark__white-flag" name="bookmark"></button>
-            <p class="results_card results_card-author-expected__invisible">Войдите, чтобы сохранять статьи</p>
-            <button class="results_cards results_waste results_waste__white-waste" name="waste"></button>
-            <button class="results_card results_card-delete__invisible" name="delete_alert">Убрать из сохраненных</button>
-            <p class="results_card results_card-category">Природа</p>
-            <p class="results_card results_card-date">05.06.2020</p>
-            <p class="results_card results_card-title">Национальное достояние &ndash; парки</p>
-            <p class="results_card results_card-preread">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.</p>
-            <p class="results_card results_card-source">Интернет</p>
-          </div>
+        <button class="results__button results__button_invisible" id="results_button">Показать еще</button>
+      </main>
 
-        </div>
-        <button class="results results_button__invisible" id="results_button">Показать еще</button>
-      </div>
     </main>
     <footer class="footer">
-      <p class="footer footer_copyright">&copy; Suroeva Tatiana</p>
-      <a class="footer footer_main" href="./index.html">Главная</a>
-      <a class="footer footer_yp" href="http://praktikum.yandex.ru" target="_blank">Яндекс.Практикум</a>
-      <a class="footer footer_github" href="http://www.github.com" target="_blank"><img src="<%=require('./images/github.svg').default%>" alt="github"></a>
-      <a class="footer footer_facebook footer_facebook__invisible" href="http://www.facebook.com" target="_blank"><img src="<%=require('./images/fb.svg').default%>" alt="facebook"></a>
+      <p class="footer__copyright">&copy; Suroeva Tatiana</p>
+      <a class="footer__main" href="./index.html">Главная</a>
+      <a class="footer__yp" href="http://praktikum.yandex.ru" target="_blank">Яндекс.Практикум</a>
+      <a class="footer__github" href="http://www.github.com" target="_blank"><img src="<%=require('./images/github.svg').default%>" alt="github"></a>
+      <a class="footer__facebook" href="http://www.facebook.com" target="_blank"><img src="<%=require('./images/fb.svg').default%>" alt="facebook"></a>
     </footer>
-    <script src="<%= htmlWebpackPlugin.files.chunks.main.entry %>"></script>
+    <script src="<%= htmlWebpackPlugin.files.chunks.homepage.entry %>"></script>
   </body>
 </html>

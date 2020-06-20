@@ -1,8 +1,0 @@
-@import url('./__black/__black.css');
-@import url('./__invisible/__invisible.css');
-@import url('./__white/__white.css');
-
-.header_line {
-  width: 100%;
-  height: 1px;
-}

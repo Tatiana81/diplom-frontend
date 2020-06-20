@@ -1,0 +1,28 @@
+.header-search__search-group {
+    width: 608px;
+    margin: 0 auto 80px auto;
+    height: 64px;
+    position: relative;
+    flex-direction: row;
+    border-radius: 100px;
+  }
+
+
+@media screen and (max-width: 768px) {
+  .header-search__search-group {
+    position: relative;
+    margin: 0 auto 48px auto;
+    height: 56px;
+    width: 58.3333333%;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .header-search__search-group {
+    width: 288px;
+    height: 128px;
+    position: unset;
+    flex-wrap: wrap;
+    margin: 122px 16px 32px 16px;
+  }
+}

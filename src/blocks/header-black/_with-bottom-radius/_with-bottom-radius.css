@@ -1,0 +1,6 @@
+@media screen and (max-width: 320px){
+  .header-black_with-bottom-radius {
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+  }
+}

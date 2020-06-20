@@ -1,0 +1,19 @@
+@import url('./_invisible/_invisible.css');
+
+.popup__error {
+  width: 82.75%;
+  height: 11px;
+  margin: 0 auto 16px 36px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 15px;
+  color: #FF0000;
+}
+
+@media screen and (max-width: 320px) {
+  .popup__error {
+    margin: 0 155px 16px 17px;
+  }
+}

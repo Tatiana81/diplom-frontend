@@ -12,7 +12,6 @@ module.exports = {
     homepage: './src/js/homepage.js',
   },
     output: {
-      path: path.resolve(__dirname, 'dist/'),
       filename: 'js/[name].[chunkhash].js',
       chunkFilename: '[name].[chunkhash].js',
     },
@@ -26,7 +25,12 @@ module.exports = {
             },
         {
           test: /\.css$/iu,
-          use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader'],
+          use: [{
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              publicPath: '../'
+            }
+          }, 'css-loader', 'postcss-loader'],
         },
             {
                 test: /\.(png|jpe?g|gif|svg|ico)$/i,
@@ -47,11 +51,8 @@ module.exports = {
     },
     plugins: [
       new MiniCssExtractPlugin({
-        filename: '[name].css',
-        chunkFilename: '[name].[contenthash].css',
-        options: {
-          publicPath: '../',
-        },
+        filename: 'css/[name].css',
+        chunkFilename: 'css/[name].[contenthash].css',
       }),
         new OptimizeCssAssetsPlugin({
             assetNameRegExp: /\.css$/g,
@@ -67,8 +68,7 @@ module.exports = {
         new HtmlWebpackPlugin({
             inject: false,
             template: './src/homepage.html',
-            filename: 'homepage.html',
-        }
-      ),
+            filename: 'homepage.html'
+        }),
     ]
 };

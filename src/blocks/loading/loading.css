@@ -1,6 +1,6 @@
-@import url('./_circle-preloader/_circle-preloader.css');
-@import url('./_title/_title.css');
-@import url('./__invisible/__invisible.css');
+@import url('./__circle-preloader/__circle-preloader.css');
+@import url('./__title/__title.css');
+@import url('./_invisible/_invisible.css');
 
 .loading {
   display: flex;

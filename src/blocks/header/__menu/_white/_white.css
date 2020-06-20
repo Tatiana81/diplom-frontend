@@ -1,0 +1,9 @@
+.header__menu_white {
+  color: #fff;
+}
+
+@media screen and (max-width: 320px) {
+  .header__menu_white {
+    margin: 16px 0 24px 0;
+  }
+}
