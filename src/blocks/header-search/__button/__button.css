@@ -20,11 +20,13 @@
 }
 
 .header-search__button:hover {
+  color: #FFFFFF;
   background: #347EFF;
   cursor: pointer;
 }
 
 .header-search__button:active {
+  color: #FFFFFF;
   background:#2A65CC;
   cursor: pointer;
 }
