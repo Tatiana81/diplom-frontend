@@ -1,4 +1,3 @@
-import "../vendor/normalize.css"
 import "../pages/index.css"
 
 const author_link = document.getElementsByClassName("header__author-link")

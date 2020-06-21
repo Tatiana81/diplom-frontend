@@ -1,4 +1,3 @@
-import "../vendor/normalize.css"
 import "../pages/homepage.css"
 
 const login_form_white = document.getElementById("header-white")
