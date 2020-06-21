@@ -12,3 +12,7 @@
   background: #fff;
   border: 0;
 }
+
+.popup__alter-link:hover {
+  cursor: pointer;
+}

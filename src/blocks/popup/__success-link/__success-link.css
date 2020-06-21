@@ -14,6 +14,10 @@
   text-align: left;
 }
 
+.popup__success-link:hover {
+  cursor: pointer;
+}
+
 @media screen and (max-width: 320px) {
   .popup__success-link {
     width: 90%;

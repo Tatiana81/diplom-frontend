@@ -1,7 +1,7 @@
 @media screen and (min-width: 768px){
   .header__exit-link_white {
     color: #FFFFFF;
-    background: url('../images/white_exit_image.svg') no-repeat 70px 12px;
+    background: url('../images/white_exit_image.svg') no-repeat 70px 14px;
     border: 1px solid #FFFFFF;
   }
 }
@@ -9,7 +9,7 @@
 @media screen and (max-width: 768px){
   .header__exit-link_white {
     color: #FFFFFF;
-    background: url('../images/white_exit_image.svg') no-repeat 67px 12px;
+    background: url('../images/white_exit_image.svg') no-repeat 67px 14px;
     border: 1px solid #FFFFFF;
   }
 }

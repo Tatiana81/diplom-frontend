@@ -2,6 +2,7 @@
     color: #1a1b22;
     border-bottom: 3px solid #1a1b22;
     box-sizing: border-box;
+    cursor: default;
 }
 
 @media screen and (min-width: 768px){

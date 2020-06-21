@@ -14,6 +14,12 @@
   font-size: 16px;
   line-height: 22px;
   color: #B6BCBF;
+  caret-color : #2F71E5;
+}
+
+.header-search__input:required {
+    box-shadow: none;
+    border: 1px solid #d1d2d6;
 }
 
 .header-search__input:focus {

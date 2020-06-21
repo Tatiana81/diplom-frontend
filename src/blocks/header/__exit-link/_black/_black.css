@@ -1,12 +1,12 @@
 .header__exit-link_black {
     color: #1a1b22;
-    background: url('../images/black_exit_image.png') no-repeat 70px 12px;
+    background: url('../images/black_exit_image.png') no-repeat 70px 14px;
     border: 1px solid #1a1b22;
   }
 
 @media screen and (max-width: 768px) {
   .header__exit-link_black {
-    background: url('../images/black_exit_image.png') no-repeat 67px 12px;
+    background: url('../images/black_exit_image.png') no-repeat 67px 14px;
   }
 }
 
@@ -15,7 +15,7 @@
     position: absolute;
     top: 0;
     right: 20px;
-    background: url('../images/black_exit_image.png') no-repeat 67px 12px;
+    background: url('../images/black_exit_image.png') no-repeat 67px 14px;
   }
 }
 

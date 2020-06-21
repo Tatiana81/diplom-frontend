@@ -224,6 +224,7 @@ mobile_menu_button.forEach(item => {
     })
 })
 
+
 inputs.forEach(item => {
   item.addEventListener('input', event => {
     event.preventDefault()
@@ -245,7 +246,9 @@ inputs.forEach(item => {
         event.target.nextElementSibling.classList.remove("popup__error_invisible")
         return
       }
-      else event.target.nextElementSibling.classList.add("popup__error_invisible")
+      else {
+        event.target.nextElementSibling.classList.add("popup__error_invisible");
+      }
     }
   })
 })

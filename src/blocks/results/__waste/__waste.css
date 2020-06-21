@@ -13,6 +13,10 @@
   border-radius: 8px;
 }
 
+.results__waste:hover {
+  cursor: pointer;
+}
+
 @media screen and (max-width: 768px) {
   .results__waste {
     top: 8px;
