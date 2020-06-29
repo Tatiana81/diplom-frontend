@@ -4,7 +4,7 @@ import {
 } from '../constants/constants'
 
 import { NewsApi } from '../api/NewsApi'
-import { Article } from '../Article'
+import { Article } from './Article'
 import { eventListeners } from '../components/newsCard'
 import { options } from '../index'
 

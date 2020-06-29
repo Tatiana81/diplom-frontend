@@ -1,6 +1,6 @@
 import "../pages/homepage.css"
 import { api } from './index.js'
-import { Article } from './Article'
+import { Article } from './components/Article'
 import './components/grey'
 import { headerWhite, mobileMenuButtons, exitLinks, categoryTitles, deleteAlerts, wasteButtons, homeTitle, resultsCards } from './constants/constants'
 
