@@ -7,7 +7,6 @@ grey.addEventListener('click', event => {
   grey.classList.replace("grey_visible", "grey_invisible")
   if (event.target.parentNode.parentNode.getAttribute("name") === "index") {
        if (loginPopup.classList.contains("popup_visible")) {
-    console.log(loginPopup.classList.contains("popup_visible"))
     loginPopup.classList.replace("popup_visible", "popup_invisible")
   }
   if (registrationPopup.classList.contains("popup_visible"))

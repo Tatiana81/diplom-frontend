@@ -19,7 +19,7 @@ export class MainApi {
       .then(result => {
         return result.token;
       })
-      .catch((err) => { console.log(err) });
+      .catch((err) => { return err });
   }
 
   async signup(email, password, name) {
@@ -39,7 +39,7 @@ export class MainApi {
       .then((result) => {
         return result;
       })
-      .catch((err) => { console.log(err) });
+      .catch((err) => { return err });
   }
 
   async getUserName() {
@@ -54,7 +54,7 @@ export class MainApi {
         return Promise.reject(`Ошибка: ${res.status}`);
       })
       .then(result => result)
-      .catch((err) => { console.log(err) });
+      .catch((err) => { return err });
   }
 
   async getSavedArticles() {
@@ -72,7 +72,7 @@ export class MainApi {
       .then(async (result) => {
         return await result;
       })
-      .catch((err) => { console.log(err) });
+      .catch((err) => { return err });
   }
 
   async addArticle(event) {

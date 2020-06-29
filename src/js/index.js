@@ -9,7 +9,7 @@ import './utils/escapeListener'
 
 import {
   mobileMenuButtons, headerBlack, authorSubmenus, savedSubmenus, exitSubmenus, mainLinks,
-  exitLinks, headerWhite
+  exitLinks, headerWhite, savedLinks
 } from './constants/constants'
 
 export const options = {
@@ -61,7 +61,7 @@ mobileMenuButtons.forEach(item => {
         grey.classList.replace("grey_visible", "grey_invisible")
         event.target.classList.replace("header__mobile-menu_white-cross", "header__mobile-menu_white-stripes")
         headerBlack.classList.replace("header_mobile-full", "header_mobile-short")
-        savedLink.forEach(item => { item.classList.add("header__saved-link_passive") })
+        savedLinks.forEach(item => { item.classList.add("header__saved-link_passive") })
       }
     }
     })
