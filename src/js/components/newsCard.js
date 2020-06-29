@@ -21,7 +21,7 @@ export const eventListeners = () => {
         event.target.nextElementSibling.classList.replace("results__card-author-expected_invisible", "results__card-author-expected_visible")
         setTimeout(() => {
           event.target.nextElementSibling.classList.replace("results__card-author-expected_visible", "results__card-author-expected_invisible")
-        }, 3000)
+        }, 2000)
       }
     })
       item.addEventListener('mouseover', event => {
