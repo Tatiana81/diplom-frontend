@@ -1,7 +1,10 @@
 .results__card-source {
-  width: 89px;
+  position: absolute;
+  margin: 0;
+  width: 90%;
   height: 20px;
-  margin: 0 auto 24px 24px;
+  bottom: 24px;
+  left: 24px;
   font-family: "Roboto Slab";
   font-style: normal;
   font-weight: bold;
@@ -11,19 +14,24 @@
   text-transform: uppercase;
   color: #B6BCBF;
   border-bottom-left-radius: 10px;
+  box-sizing: border-box;
 }
 
 @media screen and (max-width: 768px) {
   .results__card-source {
-    width: 192px;
-    margin: 0 16px 16px 16px;
+  margin: 0;
+    bottom: 16px;
+    left: 16px;
   }
 }
 
 @media screen and (max-width: 376px) {
   .results__card-source {
+    margin-top: 8px;
     width: 256px;
     height: 20px;
-    margin: 0 16px 17px 16px;
+    bottom: 16px;
+    left: 16px;
+
   }
 }

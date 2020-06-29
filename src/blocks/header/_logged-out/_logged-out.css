@@ -1,23 +1,23 @@
 @media screen and (min-width: 768px){
-  .header-black_logged-out {
+  .header_logged-out {
       flex-wrap: wrap;
     }
 }
 
 @media screen and (max-width: 768px){
-  .header-black_logged-out {
+  .header_logged-out {
       flex-wrap: unset;
     }
 }
 
 @media screen and (max-width: 407px) {
-    .header-black_logged-out {
+    .header_logged-out {
       flex-wrap: wrap;
     }
 }
 
 @media screen and (max-width: 320px) {
-    .header-black_logged-out {
+    .header_logged-out {
       height: 214px;
     }
 }

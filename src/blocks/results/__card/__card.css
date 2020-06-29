@@ -1,10 +1,15 @@
 .results__card {
   float: left;
+  display: flex;
+  flex-direction: column;
   position: relative;
   width: 400px;
+  max-height: 576px;
+  height: 576px;
   border-radius: 10px;
   margin: 0 16px 16px 0;
   background: #fff;
+  text-decoration: none;
 }
 
 .results__card:hover {
@@ -15,7 +20,9 @@
   .results__card {
     float: left;
     width: 224px;
-      margin: 0 8px 8px 0;
+    max-height: 420px;
+    height: 420px;
+    margin: 0 8px 8px 0;
   }
 }
 

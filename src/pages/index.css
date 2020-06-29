@@ -38,4 +38,10 @@ input:focus
   outline: none;
 }
 
+button,
+button:active,
+button:focus
+ {
+  outline: none;
+}
 

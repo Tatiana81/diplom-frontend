@@ -1,31 +1,31 @@
 @media screen and (min-width: 769px){
-  .header-black_logged-in {
+  .header_logged-in {
       height: 80px;
       flex-wrap: wrap;
     }
 }
 
 @media screen and (max-width: 768px){
-  .header-black_logged-in {
+  .header_logged-in {
       flex-wrap: unset
     }
 }
 
 
 @media screen and (max-width: 525px) {
-    .header-black_logged-in {
+    .header_logged-in {
       flex-wrap: wrap;
     }
 }
 
 @media screen and (max-width: 411px) {
-    .header-black_logged-in {
+    .header_logged-in {
       height: 130px;
     }
 }
 
 @media screen and (max-width: 320px) {
-    .header-black_logged-in {
+    .header_logged-in {
       height: 286px;
     }
 }

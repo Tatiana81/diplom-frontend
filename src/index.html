@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" name="index">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,12 +16,12 @@
     <img src="<%=require('./images/close.svg').default%>" alt="close" class="popup__close-button">
     <p class="popup__title">Вход</p>
     <p class="popup__subtitle">Email</p>
-    <input type="email" class="popup__input" placeholder="Введите почту">
+    <input type="email" class="popup__input" name="email" placeholder="Введите почту" pattern="[A-Za-z0-9_-]{1,}@[A-Za-z0-9_-]{1,}\.[a-z]{2,}">
     <p class="popup__error popup__error_invisible">Неправильный формат email</p>
     <p class="popup__subtitle">Пароль</p>
-    <input type="password" class="popup__input" placeholder="Введите пароль" minlength="8">
+    <input type="password" class="popup__input" name="password" placeholder="Введите пароль" minlength="8" required>
     <p class="popup__error popup__error_invisible">Длина пароля не менее 8 символов</p>
-    <button type="submit" class="popup__button" name="enter_button">Войти</button>
+    <button type="submit" class="popup__button" name="enter_button" disabled>Войти</button>
     <div class="popup__alter">
       <p class="popup__alter-text"> или </p>
       <button class="popup__alter-link">Зарегистрироваться</button>
@@ -31,13 +31,13 @@
     <img src="<%=require('./images/close.svg').default%>" alt="close" class="popup__close-button">
     <p class="popup__title">Регистрация</p>
     <p class="popup__subtitle">Email</p>
-    <input type="email" tabindex="1" class="popup__input" placeholder="Введите почту">
+    <input type="email" tabindex="1" class="popup__input" name="email" placeholder="Введите почту" pattern="[A-Za-z0-9_-]{1,}@[A-Za-z0-9_-]{1,}\.[a-z]{2,}">
     <p class="popup__error popup__error_invisible">Неправильный формат email</p>
     <p class="popup__subtitle">Пароль</p>
-    <input type="password" tabindex="2" class="popup__input" placeholder="Введите пароль" minlength="8">
+    <input type="password" tabindex="2" class="popup__input" name="password" placeholder="Введите пароль" minlength="8">
     <p class="popup__error popup__error_invisible">Длина пароля не менее 8 символов</p>
     <p class="popup__subtitle">Имя</p>
-    <input type="text" tabindex="3" class="popup__input" placeholder="Введите своё имя" minlength="2" maxlength="30">
+    <input type="text" tabindex="3" class="popup__input" name="name" placeholder="Введите своё имя" minlength="2" maxlength="30" pattern="[A-Za-z0-9_-]{2,30}" required>
     <p class="popup__error popup__error_invisible">Имя должно содержать от 2 до 30 символов</p>
     <p class="popup__exist-user-error popup__exist-user-error_invisible">Такой пользователь уже есть</p>
     <button class="popup__button" name="reg_button" disabled>Зарегистрироваться</button>
@@ -52,7 +52,7 @@
     <button class="popup__success-link">Выполнить вход</button>
   </div>
   <header class="header">
-    <div class="header-black header-black_logged-out header_mobile-short header-black_bordered" id="header-black">
+    <div class="header-black header_logged-out header_mobile-short header-black_bordered" id="header-black">
       <h1 class="header__title header__title_white">NewsExplorer</h1>
       <button class="header__mobile-menu header__mobile-menu_white-stripes header__mobile-menu_invisible" name="mobile_menu_button"></button>
       <div class="header__line header__line_white"></div>
@@ -66,7 +66,7 @@
         <li class="header__menu-subtitle header__menu-subtitle_invisible header__menu-subtitle_saved">
           <a href="homepage.html" class="header__saved-link header-black_visible header__saved-link_passive">Сохранённые&nbsp;статьи</a></li>
         <li class="header__menu-subtitle header__menu-subtitle_invisible header__menu-subtitle_exit">
-          <a href="index.html" class="header__exit-link header__exit-link_white">Грета</a></li>
+          <a href="index.html" class="header__exit-link header__exit-link_white" id="exit_link_black"></a></li>
       </ul>
     </div>
     <div class="header-search header-search_header-line" id="search">
@@ -74,7 +74,7 @@
       <p class="header-search__subtitle">Находите самые свежие статьи на любую тему и сохраняйте в своём личном кабинете.</p>
       <form class="header-search__search-group">
         <input class="header-search__input" placeholder="Введите тему новости" id="search_input" required>
-        <input type="submit" class="header-search__button" name="search_action" value="Искать">
+        <button type="submit" class="header-search__button" name="search_action">Искать</button>
       </form>
     </div>
     </header>
@@ -91,42 +91,7 @@
       <div class="results results_invisible" id="results">
         <p class="results__title results__title_invisible" id="results_title">Результаты поиска</p>
         <div class="results__cards results__cards_black">
-          <div class="results__card">
-            <img src="<%=require('./images/background.jpg').default%>" alt="picture" class="results__card-image">
-            <button class="results__card-bookmark results__card-bookmark_invisible results__card-bookmark_white-flag" name="bookmark"></button>
-            <p class="results__card-author-expected results__card-author-expected_invisible">Войдите, чтобы сохранять статьи</p>
-            <button class="results__waste results__waste_white-waste" name="waste"></button>
-            <button class="results__card-delete results__card-delete_invisible" name="delete_alert">Убрать из сохраненных</button>
-            <p class="results__card-category results__card-category_invisible">Природа</p>
-            <p class="results__card-date">05.06.2020</p>
-            <p class="results__card-title">Национальное достояние &ndash; парки</p>
-            <p class="results__card-preread">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.</p>
-            <p class="results__card-source">Интернет</p>
-          </div>
-          <div class="results__card">
-            <img src="<%=require('./images/background.jpg').default%>" alt="picture" class="results__card-image">
-            <button class="results__card-bookmark results__card-bookmark_invisible results__card-bookmark_white-flag" name="bookmark"></button>
-            <p class="results__card-author-expected results__card-author-expected_invisible">Войдите, чтобы сохранять статьи</p>
-            <button class="results__waste results__waste_invisible results__waste_white-waste"></button>
-            <button class="results__card-delete results__card-delete_invisible" name="delete_alert">Убрать из сохраненных</button>
-            <p class="results__card-category results__card-category_invisible">Природа</p>
-            <p class="results__card-date">05.06.2020</p>
-            <p class="results__card-title">Национальное достояние &ndash; парки</p>
-            <p class="results__card-preread">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.</p>
-            <p class="results__card-source">Интернет</p>
-          </div>
-          <div class="results__card">
-            <img src="<%=require('./images/background.jpg').default%>" alt="picture" class="results__card-image">
-            <button class="results__card-bookmark results__card-bookmark_invisible results__card-bookmark_white-flag" name="bookmark"></button>
-            <p class="results__card-author-expected results__card-author-expected_invisible">Войдите, чтобы сохранять статьи</p>
-            <button class="results__waste results__waste_white-waste" name="waste"></button>
-            <button class="results__card-delete results__card-delete_invisible" name="delete_alert">Убрать из сохраненных</button>
-            <p class="results__card-category results__card-category_invisible">Природа</p>
-            <p class="results__card-date">05.06.2020</p>
-            <p class="results__card-title">Национальное достояние &ndash; парки</p>
-            <p class="results__card-preread">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.</p>
-            <p class="results__card-source">Интернет</p>
-          </div>
+
         </div>
         <button class="results__button results__button_invisible" id="results_button">Показать еще</button>
       </div>

@@ -1,9 +1,12 @@
 @import url('./_invisible/_invisible.css');
 
 .results__title {
-  display: inline-flex;
+  display: block;
   width: 712px;
   height: 46px;
+  max-height: 46px;
+  min-height: 46px;
+  overflow: hidden;
   font-family: "Roboto Slab";
   font-style: normal;
   font-weight: normal;

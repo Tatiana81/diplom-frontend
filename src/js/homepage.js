@@ -1,117 +1,140 @@
 import "../pages/homepage.css"
+import { api } from './index.js'
+import { Article } from './Article'
+import './components/grey'
+import { headerWhite, mobileMenuButtons, exitLinks, categoryTitles, deleteAlerts, wasteButtons, homeTitle, resultsCards } from './constants/constants'
 
-const login_form_white = document.getElementById("header-white")
-const exit_button_black = document.getElementsByClassName("header__exit-link")
-const saved_articles_link = document.getElementsByClassName("header_saved-link")
-const home = document.getElementById("home")
-const search = document.getElementById("search")
-const results = document.getElementById("results")
-const about = document.getElementById("about")
-const logged_in_main_link = document.getElementsByClassName("header_main-link")
-const search_action = document.getElementsByName("search_action")
-const results_title = document.getElementById('results_title')
-const waste = document.getElementsByName("waste")
-const category = document.getElementsByClassName("results_card-category__invisible")
-const delete_alert = document.getElementsByName("delete_alert")
-const mobile_menu_button = document.getElementsByName("mobile_menu_button")
-const grey = document.getElementById("grey")
-const header_line = document.querySelectorAll(".header_line")
 
-saved_articles_link.forEach(item => {
-  item.addEventListener('click', event => {
-    event.preventDefault();
-    logged_in_form_black.classList.replace("header-black-logged-in__visible", "header-black-logged-in__invisible")
-    login_form_white.classList.replace("header-white__invisible", "header-white__visible")
-    home.classList.replace("header-home__invisible", "header-home")
-    search.classList.replace("header-search", "header-search__invisible")
-    results.classList.replace("results__invisible", "results")
-    about.classList.replace("about", "about__invisible")
-    bookmarks.forEach(item => {
-      item.classList.replace("results_card-bookmark", "results_card-bookmark__invisible")
-    })
-    waste.forEach(item => {
-      item.classList.replace("results_waste__invisible", "results_waste")
-    })
-    category.forEach(item => {
-      item.classList.replace("results_card-category__invisible", "results_card-category")
-    })
-    loading.classList.replace("loading", "loading__invisible")
-    loading.children.forEach(item => item.classList.replace("loading", "loading__invisible"))
-    not_found.classList.replace("not-found", "not-found__invisible")
-    })
-})
+const getKeywords = () => {
+  let keywords = {}
+  let first = 0; let firstKeyword = "";
+  let second = 0; let secondKeyword = "";
+  let articles = JSON.parse(localStorage.savedArticles)
 
-logged_in_main_link.forEach(item => {
-  item.addEventListener('click', event => {
-    event.preventDefault();
-    event.stopImmediatePropagation();
-    logged_in_form_black.classList.replace("header-black-logged-in__invisible", "header-black-logged-in")
-    login_form_white.classList.replace("header-white", "header-white__invisible")
-    home.classList.replace("header-home", "header-home__invisible")
-    search.classList.replace("header-search__invisible", "header-search")
-    results.classList.replace("results", "results__invisible")
-    about.classList.replace("about__invisible","about")
-  })
-})
-
-search_action.forEach(item => {
-  item.addEventListener('click', event => {
-    event.preventDefault();
-    results.classList.replace("results", "results__invisible")
-    if (not_found.classList.contains("not-found")) not_found.classList.replace("not-found", "not-found__invisible")
-    bookmarks.forEach(item => {
-      item.classList.replace("results_card-bookmark__invisible", "results_card-bookmark")
-    })
-    category.forEach(item => {
-      item.classList.replace("results_card-category", "results_card-category__invisible")
-    })
-    delete_alert.forEach(item => {
-      item.classList.replace("results_card-delete", "results_card-delete__invisible")
-    })
-    waste.forEach(item => {
-      item.classList.replace("results_waste", "results_waste__invisible")
-    })
-    loading.classList.replace("loading__invisible", "loading")
-    loading.children.forEach(item => item.classList.replace("loading__invisible", "loading"))
-    setTimeout(() => {
-    loading.classList.replace("loading", "loading__invisible")
-    loading.children.forEach(item => item.classList.replace("loading", "loading__invisible"))
-      if (search_input.value === 'статьи') {
-        results.classList.replace("results__invisible", "results")
-        results_title.classList.replace("results_title__invisible", "results_title")
-        results_button.classList.replace("results_button__invisible","results_button")
-      }
-      else not_found.classList.replace("not-found__invisible", "not-found")
-    }, 2000)
-  })
-})
-
-waste.forEach(item => {
-  item.addEventListener('mouseover', event => {
-    event.target.classList.replace("results__waste_white-waste","results__waste_black-waste")
-    event.target.nextSibling.nextElementSibling.classList.replace("results__card-delete_invisible","results__card-delete")
-  })
-  item.addEventListener('mouseout', event => {
-    event.target.classList.replace("results__waste_black-waste","results__waste_white-waste")
-  })
-})
-
-mobile_menu_button.forEach(item => {
-  item.addEventListener('click', event => {
-    if (event.target.classList.contains("header__mobile-menu_black-stripes")) {
-      grey.classList.replace('grey_invisible','grey_visible')
-      event.target.classList.replace("header__mobile-menu_black-stripes", "header__mobile-menu_black-cross");
-      login_form_white.classList.replace("header_mobile-short", "header_mobile-full-white")
-      login_form_white.classList.add('header-white_with-bottom-radius')
-      login_form_white.classList.replace('header-white_relative','header-white_absolute')
+  for (let item of articles) {
+    if (item.keyword in keywords) keywords[item.keyword] += 1
+    else keywords[item.keyword] = 1
+    if (keywords[item.keyword] > first) {
+      first = keywords[item.keyword];
+      firstKeyword = item.keyword
     }
-    else {
-      grey.classList.replace('grey_visible','grey_invisible')
-      event.target.classList.replace("header__mobile-menu_black-cross", "header__mobile-menu_black-stripes");
-      login_form_white.classList.replace("header_mobile-full-white", "header_mobile-short")
-      login_form_white.classList.replace("header_unbordered", "header_bordered")
-      login_form_white.classList.remove('header-white_with-bottom-radius')
-      login_form_white.classList.replace('header-white_absolute','header-white_relative')
+    if ((keywords[item.keyword] < first) && (keywords[item.keyword]) > second) {
+      second = keywords[item.keyword];
+      secondKeyword = item.keyword
+    }
+  }
+  let categories = getCategories(keywords)
+  categories.length === 1 ? keys.innerText = `${categories[0][0]}`:
+  categories.length === 2 ? keys.innerText = `${categories[0][0]}, ${categories[1][0]}`:
+  keys.innerText = `${categories[0][0]}, ${categories[1][0]} и ${categories.length-2} другим`
+}
+
+const getCategories = (keywords) => {
+  let sortedCategories = [];
+  for (var cat in keywords) {
+    sortedCategories.push([cat, keywords[cat]]);
+  }
+  sortedCategories.sort(function(a, b) {
+    return b[1] - a[1];
+  });
+  return sortedCategories
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  if (localStorage.userName === undefined) window.open('../index.html', '_self')
+  exitLinks.forEach(item => item.innerText = localStorage.userName)
+  categoryTitles.forEach(item => {
+      item.classList.replace("results__card-category", "results_card-category_invisible")
+    })
+    deleteAlerts.forEach(item => {
+      item.classList.replace("results__card-delete", "results__card-delete_invisible")
+    })
+    wasteButtons.forEach(item => {
+      item.classList.replace("results__waste", "results__waste_invisible")
+    })
+  getSavedArticles();
+  })
+
+const getSavedArticles = async () => {
+  localStorage.removeItem('savedArticles')
+  await api.getSavedArticles()
+    .then(async (response) => {
+      if (response === undefined) {
+        homeTitle.innerText = `${localStorage.userName}, у вас нет сохраненных статей`
+        resultsCards.forEach(item => item.classList.add("results__cards_invisible"))
+        homeKeysField.classList.replace("header-home__keys-field_visible","header-home__keys-field_invisible")
+        localStorage.setItem("savedArticles", [])
+      }
+      if (response.data.length == 1) {
+        homeTitle.innerText = `${localStorage.userName}, у вас 1 сохраненная статья`
+      }
+      if (response.data.length == 2) {
+        homeTitle.innerText = `${localStorage.userName}, у вас 2 сохраненных статьи`
+      }
+      if (response.data.length > 2) {
+        homeTitle.innerText = `${localStorage.userName}, у вас ${response.data.length} сохраненных статей`
+      }
+      localStorage.setItem("savedArticles", JSON.stringify(response.data));
+      getKeywords();
+      cardsGenerate()
+    })
+    .catch((err) => {
+      return err;
+    })
+}
+
+let currentIndex = 0;
+
+const cardsGenerate = (articles=JSON.parse(localStorage.savedArticles), index = currentIndex) => {
+  do {
+    let element = new Article(articles[index], 0, articles[index]["_id"]).create()
+    resultsCards.forEach(item => { item.insertAdjacentHTML('beforeend', element) });
+    addListeners();
+    index++;
+    }
+  while (index !== articles.length);
+  currentIndex = index;
+}
+
+const addListeners = () => {
+  wasteButtons.forEach(item => {
+    item.addEventListener('mouseover', event => {
+      event.target.classList.replace("results__waste_white-waste","results__waste_black-waste")
+      event.target.nextSibling.nextElementSibling.classList.replace("results__card-delete_invisible","results__card-delete")
+    })
+    item.addEventListener('mouseout', event => {
+      event.target.classList.replace("results__waste_black-waste", "results__waste_white-waste")
+    })
+  })
+  deleteAlerts.forEach(item => {
+    item.addEventListener('click', async event => {
+      event.preventDefault()
+      event.stopImmediatePropagation();
+      await api.deleteArticle(event)
+      getSavedArticles();
+      resultsCards.forEach(item => item.removeChild(event.target.parentNode))
+    })
+  })
+}
+
+mobileMenuButtons.forEach(item => {
+  item.addEventListener('click', event => {
+    if (event.target.parentNode.classList.contains("header-white")) {
+      if (event.target.classList.contains("header__mobile-menu_black-stripes")) {
+        event.target.classList.replace("header__mobile-menu_black-stripes", "header__mobile-menu_black-cross");
+        headerWhite.classList.replace("header_mobile-short", "header_mobile-full-white")
+        headerWhite.classList.add('header-white_with-bottom-radius')
+        headerWhite.classList.replace('header-white_relative', 'header-white_absolute')
+        grey.classList.replace('grey_invisible', 'grey_visible')
+      }
+      else {
+        event.target.classList.replace("header__mobile-menu_black-cross", "header__mobile-menu_black-stripes");
+        headerWhite.classList.replace("header_mobile-full-white", "header_mobile-short")
+        headerWhite.classList.replace("header_unbordered", "header_bordered")
+        headerWhite.classList.remove('header-white_with-bottom-radius')
+        headerWhite.classList.replace('header-white_absolute', 'header-white_relative')
+        grey.classList.replace('grey_visible', 'grey_invisible')
+      }
     }
     })
 })

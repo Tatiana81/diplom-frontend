@@ -1,7 +1,5 @@
 @import url('./_bordered/_bordered.css');
 @import url('./_with-bottom-radius/_with-bottom-radius.css');
-@import url('./_logged-in/_logged-in.css');
-@import url('./_logged-out/_logged-out.css');
 
 .header-black {
     display: flex;
