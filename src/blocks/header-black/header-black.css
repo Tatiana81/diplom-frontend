@@ -1,0 +1,22 @@
+@import url('./_bordered/_bordered.css');
+@import url('./_with-bottom-radius/_with-bottom-radius.css');
+
+.header-black {
+    display: flex;
+    justify-content: space-between;
+    z-index: 12;
+}
+
+@media screen and (max-width: 768px) {
+  .header-black {
+    justify-content: space-between;
+  }
+}
+
+
+@media screen and (max-width: 320px) {
+  .header-black {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+}

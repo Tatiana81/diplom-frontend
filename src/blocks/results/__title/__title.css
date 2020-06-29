@@ -1,0 +1,40 @@
+@import url('./_invisible/_invisible.css');
+
+.results__title {
+  display: block;
+  width: 712px;
+  height: 46px;
+  max-height: 46px;
+  min-height: 46px;
+  overflow: hidden;
+  font-family: "Roboto Slab";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 40px;
+  line-height: 46px;
+  color: #1A1B22;
+  margin: 80px 624px 64px 104px;
+}
+
+@media screen and (max-width: 768px) {
+  .results__title {
+    width: calc(100vw - 80px);
+    flex-wrap: wrap;
+    height: 34px;
+    font-size: 30px;
+    line-height: 34px;
+    margin: 40px auto 32px auto;
+  }
+}
+
+@media screen and (max-width: 376px) {
+  .results__title {
+    box-sizing: border-box;
+    width: 288px;
+    font-size: 30px;
+    line-height: 34px;
+    margin: 32px 16px 24px 16px;
+    padding-right: 70px;
+    height: 68px;
+  }
+}

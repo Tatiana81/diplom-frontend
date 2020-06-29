@@ -1,0 +1,35 @@
+@import url('./_invisible/_invisble.css');
+
+.results__card-category {
+  position: absolute;
+  left: 24px;
+  top: 24px;
+  width: 88px;
+  height: 40px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+  color: #000000;
+  border-radius: 10px;
+  margin: 0;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 768px) {
+  .results__card-category {
+    top: 8px;
+    left: 8px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .results__card-category {
+    top: 16px;
+    left: 16px;
+  }
+}

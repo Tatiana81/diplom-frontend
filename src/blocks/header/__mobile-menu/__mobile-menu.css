@@ -1,0 +1,16 @@
+@import url('./_black-stripes/_black-stripes.css');
+@import url('./_white-stripes/_white-stripes.css');
+@import url('./_black-cross/_black-cross.css');
+@import url('./_white-cross/_white-cross.css');
+@import url('./_invisible/_invisible.css');
+
+@media screen and (max-width: 320px) {
+  .header__mobile-menu {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 24px;
+    height: 24px;
+    border: 0;
+  }
+}

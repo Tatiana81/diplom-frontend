@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ru" name="index">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>News Explorer</title>
+    <meta name="description" content="Сайт поиска новостей. У нас всегда есть что-то новое для Вас">
+    <meta name="author" lang="ru" content="Татьяна Суроева" />
+    <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.chunks.main.css %>">
+    <link rel="icon" type="image/png" href="<%=require('./images/favicon.png').default%>">
+  </head>
+  <body>
+  <div class="grey grey_invisible" id="grey"></div>
+  <form class="popup_invisible popup__login" id="popup_login" novalidate>
+    <img src="<%=require('./images/close.svg').default%>" alt="close" class="popup__close-button">
+    <p class="popup__title">Вход</p>
+    <p class="popup__subtitle">Email</p>
+    <input type="email" class="popup__input" name="email" placeholder="Введите почту" pattern="[A-Za-z0-9_-]{1,}@[A-Za-z0-9_-]{1,}\.[a-z]{2,}">
+    <p class="popup__error popup__error_invisible">Неправильный формат email</p>
+    <p class="popup__subtitle">Пароль</p>
+    <input type="password" class="popup__input" name="password" placeholder="Введите пароль" minlength="8" required>
+    <p class="popup__error popup__error_invisible">Длина пароля не менее 8 символов</p>
+    <button type="submit" class="popup__button" name="enter_button" disabled>Войти</button>
+    <div class="popup__alter">
+      <p class="popup__alter-text"> или </p>
+      <button class="popup__alter-link">Зарегистрироваться</button>
+    </div>
+  </form>
+  <form class="popup__registration popup_invisible" id="popup_registration" novalidate>
+    <img src="<%=require('./images/close.svg').default%>" alt="close" class="popup__close-button">
+    <p class="popup__title">Регистрация</p>
+    <p class="popup__subtitle">Email</p>
+    <input type="email" tabindex="1" class="popup__input" name="email" placeholder="Введите почту" pattern="[A-Za-z0-9_-]{1,}@[A-Za-z0-9_-]{1,}\.[a-z]{2,}">
+    <p class="popup__error popup__error_invisible">Неправильный формат email</p>
+    <p class="popup__subtitle">Пароль</p>
+    <input type="password" tabindex="2" class="popup__input" name="password" placeholder="Введите пароль" minlength="8">
+    <p class="popup__error popup__error_invisible">Длина пароля не менее 8 символов</p>
+    <p class="popup__subtitle">Имя</p>
+    <input type="text" tabindex="3" class="popup__input" name="name" placeholder="Введите своё имя" minlength="2" maxlength="30" pattern="[A-Za-z0-9_-]{2,30}" required>
+    <p class="popup__error popup__error_invisible">Имя должно содержать от 2 до 30 символов</p>
+    <p class="popup__exist-user-error popup__exist-user-error_invisible">Такой пользователь уже есть</p>
+    <button class="popup__button" name="reg_button" disabled>Зарегистрироваться</button>
+    <div class="popup__alter">
+      <p class="popup__alter-text"> или </p>
+      <button class="popup__alter-link" name="alter_link">Войти</button>
+    </div>
+  </form>
+  <div class="popup__success-registration popup_invisible" id="popup_success_registration">
+    <img src="<%=require('./images/close.svg').default%>" alt="close" class="popup__close-button">
+    <p class="popup__success-text">Пользователь успешно зарегистрирован</p>
+    <button class="popup__success-link">Выполнить вход</button>
+  </div>
+  <header class="header">
+    <div class="header-black header_logged-out header_mobile-short header-black_bordered" id="header-black">
+      <h1 class="header__title header__title_white">NewsExplorer</h1>
+      <button class="header__mobile-menu header__mobile-menu_white-stripes header__mobile-menu_invisible" name="mobile_menu_button"></button>
+      <div class="header__line header__line_white"></div>
+      <ul class="header__menu header__menu_white">
+        <li class="header__menu-subtitle">
+          <a href="index.html" class="header__main-link header__main-link_white header__main-link_active header__main-link_logged-out">Главная</a>
+        </li>
+        <li class="header__menu-subtitle header__menu-subtitle_author">
+          <button class="header__author-link" id="author_link">Авторизоваться</button>
+        </li>
+        <li class="header__menu-subtitle header__menu-subtitle_invisible header__menu-subtitle_saved">
+          <a href="homepage.html" class="header__saved-link header-black_visible header__saved-link_passive">Сохранённые&nbsp;статьи</a></li>
+        <li class="header__menu-subtitle header__menu-subtitle_invisible header__menu-subtitle_exit">
+          <a href="index.html" class="header__exit-link header__exit-link_white" id="exit_link_black"></a></li>
+      </ul>
+    </div>
+    <div class="header-search header-search_header-line" id="search">
+      <h2 class="header-search__title">Что в мире творится?</h2>
+      <p class="header-search__subtitle">Находите самые свежие статьи на любую тему и сохраняйте в своём личном кабинете.</p>
+      <form class="header-search__search-group">
+        <input class="header-search__input" placeholder="Введите тему новости" id="search_input" required>
+        <button type="submit" class="header-search__button" name="search_action">Искать</button>
+      </form>
+    </div>
+    </header>
+    <main class="main">
+      <div class="loading loading_invisible" id="loading">
+        <i class="loading__circle-preloader loading_invisible"></i>
+        <p class="loading__title loading_invisible ">Идет поиск новостей...</p>
+      </div>
+      <div class="not-found not-found_invisible" id="not-found">
+        <img src="<%=require('./images/not_found.svg').default%>" alt="not-found" class="not-found__image">
+        <p class="not-found__title">Ничего не найдено</p>
+        <p class="not-found__subtitle">К сожалению по вашему запросу ничего&nbsp; не&nbsp;найдено.</p>
+      </div>
+      <div class="results results_invisible" id="results">
+        <p class="results__title results__title_invisible" id="results_title">Результаты поиска</p>
+        <div class="results__cards results__cards_black">
+
+        </div>
+        <button class="results__button results__button_invisible" id="results_button">Показать еще</button>
+      </div>
+      <div class="about" id="about">
+          <img class="about__foto" src="<%=require('./images/test_image.jpg').default%>" alt="my-foto">
+        <div class="about__text">
+          <p class="about__author">Об авторе</p>
+          <p class="about__description">Это блок с описанием автора проекта. Здесь следует указать, как вас зовут, чем вы занимаетесь, какими технологиями разработки владеете.</p>
+          <p class="about__description">Также можно рассказать о процессе обучения в Практикуме, чему вы тут научились, и чем можете помочь потенциальным заказчикам.</p>
+        </div>
+      </div>
+    </main>
+    <footer class="footer">
+      <p class="footer__copyright">&copy; Suroeva Tatiana</p>
+        <a class="footer__main" href="./index.html">Главная</a>
+        <a class="footer__yp" href="http://praktikum.yandex.ru" target="_blank">Яндекс.Практикум</a>
+        <a class="footer__github" href="http://www.github.com" target="_blank"><img src="<%=require('./images/github.svg').default%>" alt="github"></a>
+        <a class="footer__facebook" href="http://www.facebook.com" target="_blank"><img src="<%=require('./images/fb.svg').default%>" alt="facebook"></a>
+    </footer>
+    <script src="<%= htmlWebpackPlugin.files.chunks.main.entry %>"></script>
+  </body>
+</html>

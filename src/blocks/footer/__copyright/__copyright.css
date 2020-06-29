@@ -1,0 +1,32 @@
+.footer__copyright {
+  width: 433px;
+  height: 22px;
+  max-height: 22px;
+  margin: 32px auto 26px 7.2222222%;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 22px;
+  color: #B6BCBF;
+}
+
+@media screen and (max-width: 768px) {
+  .footer__copyright {
+    line-height: 22px;
+    width: 150px;
+    max-width: 300px;
+    margin: 24px auto 18px 5.20833333%;
+  }
+}
+
+
+@media screen and (max-width: 320px) {
+  .footer__copyright {
+    height: 22px;
+    max-height: 22px;
+    width: 288px;
+    order: 5;
+    margin: 0 16px 20px 16px;
+  }
+}

@@ -1,0 +1,15 @@
+.header-home__subtitle {
+  margin: 0 10px 0 0;
+}
+
+@media screen and (max-width: 768px) {
+  .header-home__subtitle {
+    margin: 0 10px 0 0;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .header-home__subtitle {
+    margin: 0 10px 0 0;
+  }
+}

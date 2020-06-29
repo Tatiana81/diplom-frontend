@@ -1,0 +1,12 @@
+@import url('./__pretitle/__pretitle.css');
+@import url('./__subtitle/__subtitle.css');
+@import url('./__title/__title.css');
+@import url('./_invisible/_invisible.css');
+@import url('./_column/_column.css');
+@import url('./__keys-field/__keys-field.css');
+@import url('./__keys/__keys.css');
+
+.header-home {
+  display: flex;
+  background: #fff;
+}

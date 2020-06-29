@@ -1,0 +1,27 @@
+@import url('./_invisible/_invisible.css');
+@import url('./_blue-flag/_blue-flag.css');
+@import url('./_white-flag/_white-flag.css');
+
+.results__card-bookmark {
+  z-index: 2;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  padding: 10px 14px 10px 11px;
+  margin: 0;
+  border-radius: 8px;
+}
+
+
+.results__card-bookmark:hover {
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .results__card-bookmark {
+    top: 8px;
+    right: 8px;
+  }
+}

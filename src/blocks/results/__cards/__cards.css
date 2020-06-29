@@ -1,0 +1,15 @@
+@import url('./_white/_white.css');
+@import url('./_black/_black.css');
+@import url('./_invisible/_invisible.css');
+
+.results__cards {
+  float: left;
+  background: #f5f6f7;
+}
+
+@media screen and (max-width: 376px) {
+  .results__cards {
+    width: 288px;
+    padding: 0;
+  }
+}

@@ -1,0 +1,32 @@
+@import url('./_invisible/_invisible.css');
+@import url('./_black-waste/_black-waste.css');
+@import url('./_white-waste/_white-waste.css');
+
+.results__waste {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  padding: 8px 10px 10px 9px;
+  margin: 0;
+  border-radius: 8px;
+}
+
+.results__waste:hover {
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .results__waste {
+    top: 8px;
+    right: 8px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .results__waste {
+    top: 16px;
+    right: 16px;
+  }
+}

@@ -1,0 +1,45 @@
+@import url('./_active/_active.css');
+@import url('./_visible/_visible.css');
+@import url('./_invisible/_invisible.css');
+@import url('./_saved-page/_save-page.css');
+@import url('./_black/_black.css');
+@import url('./_white/_white.css');
+@import url('./_logged-in/_logged-in.css');
+
+.header__main-link {
+  text-decoration: none;
+  display: flex;
+  max-height: 80px;
+  align-items: center;
+  align-content: center;
+  margin: 0 32px 0 0;
+  justify-content: center;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+}
+
+.header__main-link:hover {
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .header__main-link {
+    max-height: 66px;
+    font-size: 16px;
+    margin: 0 16px 0 0;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .header__main-link {
+    width: 288px;
+    line-height: 56px;
+    height: 56px;
+    margin: 16px 16px 0 0;
+    justify-content: flex-start;
+  }
+}

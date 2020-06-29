@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru" name="homepage">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>News Explorer</title>
+    <meta name="description" content="Сайт поиска новостей. У нас всегда есть что-то новое для Вас">
+    <meta name="author" lang="ru" content="Татьяна Суроева" />
+    <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.chunks.homepage.css %>">
+    <link rel="icon" type="image/png" href="<%=require('./images/favicon.png').default%>">
+  </head>
+  <body>
+<div class="grey grey_invisible" id="grey"></div>
+  <header class="header header_white">
+    <div class="header-white header_logged-out header_mobile-short header-white_relative" id="header-white">
+      <h1 class="header__title header__title_black">NewsExplorer</h1>
+      <button class="header__mobile-menu header__mobile-menu_black-stripes header__mobile-menu_invisible" name="mobile_menu_button"></button>
+      <div class="header__line header__line_black"></div>
+      <ul class="header__menu header__menu_black">
+        <li class="header__menu-subtitle header__menu-subtitle_visible header__menu-subtitle_main">
+          <a href="index.html" class="header__main-link header__main-link_black">Главная</a>
+        </li>
+        <li class="header__menu-subtitle header__menu-subtitle_saved">
+          <a href="homepage.html" class="header__saved-link header__saved-link_active-black">Сохранённые&nbsp;статьи</a></li>
+        <li class="header__menu-subtitle header__menu-subtitle_exit">
+          <a href="index.html" class="header__exit-link header__exit-link_black"></a></li>
+      </ul>
+    </div>
+    <div class="header-home header-home_column" id="home">
+      <p class="header-home__pretitle">Сохранённые статьи</p>
+      <p class="header-home__title" id="home_title"></p>
+      <div class="header-home__keys-field header-home__keys-field_visible" id="keys_field">
+        <p class="header-home__subtitle">По ключевым словам:</p>
+        <p class="header-home__keys"  id="keys"></p>
+      </div>
+    </div>
+  </header>
+      <main class="results" id="results">
+        <div class="results__cards results__cards_white">
+
+        </div>
+        <button class="results__button results__button_invisible" id="results_button">Показать еще</button>
+      </main>
+    <footer class="footer">
+      <p class="footer__copyright">&copy; Suroeva Tatiana</p>
+      <a class="footer__main" href="./index.html">Главная</a>
+      <a class="footer__yp" href="http://praktikum.yandex.ru" target="_blank">Яндекс.Практикум</a>
+      <a class="footer__github" href="http://www.github.com" target="_blank"><img src="<%=require('./images/github.svg').default%>" alt="github"></a>
+      <a class="footer__facebook" href="http://www.facebook.com" target="_blank"><img src="<%=require('./images/fb.svg').default%>" alt="facebook"></a>
+    </footer>
+    <script src="<%= htmlWebpackPlugin.files.chunks.homepage.entry %>"></script>
+  </body>
+</html>

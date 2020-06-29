@@ -1,0 +1,25 @@
+@import url('./__foto/__foto.css');
+@import url('./__author/__author.css');
+@import url('./__description/__description.css');
+@import url('./__text/__text.css');
+@import url('./_invisible/_invisible.css');
+
+.about {
+  display: flex;
+  background: #fff;
+}
+
+@media screen and (max-width: 768px) {
+  .about {
+    flex-direction: row;
+    justify-content: start;
+    align-content: flex-start;
+  }
+}
+
+
+@media screen and (max-width: 450px) {
+  .about {
+    flex-direction: column;
+  }
+}

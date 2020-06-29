@@ -1,0 +1,14 @@
+@import url('./_invisible/_invisible.css');
+@import url('./_black/_black.css');
+@import url('./_white/_white.css');
+
+@media screen and (max-width: 320px) {
+  .header__line {
+    position: absolute;
+    top: 56px;
+    left:0;
+    width: 100%;
+    height: 1px;
+    margin: 0;
+  }
+}

@@ -1,0 +1,22 @@
+@import url('./_invisible/_invisible.css');
+
+.footer__facebook {
+  width: 20px;
+  max-width: 20px;
+  height: 20px;
+  margin: 30px 106px 30px 0;
+  border-radius: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .footer__facebook {
+    margin: 21px 40px 21px 0;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .footer__facebook {
+    order: 2;
+    margin: 22px 18px 0 0;
+  }
+}

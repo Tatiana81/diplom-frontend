@@ -1,0 +1,9 @@
+.popup__success-registration_invisible {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .popup__success-registration_invisible {
+    display: none;
+  }
+}

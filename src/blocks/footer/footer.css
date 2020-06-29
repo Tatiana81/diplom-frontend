@@ -1,0 +1,20 @@
+@import url('./__copyright/__copyright.css');
+@import url('./__github/__github.css');
+@import url('./__main/__main.css');
+@import url('./__yp/__yp.css');
+@import url('./__facebook/__facebook.css');
+@import url('./_invisible/_invisible.css');
+
+.footer {
+  display: flex;
+  flex-direction: row;
+  background: #fff;
+  position: relative;
+}
+
+@media screen and (max-width: 768px) {
+  .footer {
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+}

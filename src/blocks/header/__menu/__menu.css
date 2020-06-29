@@ -1,0 +1,31 @@
+@import url('./_black/_black.css');
+@import url('./_white/_white.css');
+
+.header__menu {
+  margin: 0 104px 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  height: 80px;
+}
+
+@media screen and (max-width: 768px) {
+  .header__menu {
+    justify-content: left;
+    margin: 0 5.2083333%;
+    height: 66px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .header__menu {
+    width: 288px;
+    flex-direction: column;
+    align-items: unset;
+    overflow: visible;
+    color: #fff;
+  }
+}
