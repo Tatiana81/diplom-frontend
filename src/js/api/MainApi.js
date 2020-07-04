@@ -7,7 +7,7 @@ export class MainApi {
   }
 
   async signin(email, password) {
-    return fetch(`${this.baseUrl}/signin`, {
+    return await fetch(`${this.baseUrl}/signin`, {
       method: 'POST',
       headers: { "Content-type": "application/json" },
       body: JSON.stringify({
@@ -15,12 +15,12 @@ export class MainApi {
         password: password
       })
     })
-      .then(res => {
-        if (res.ok) return res.json()
+      .then(async res => {
+        if (res.ok) return await res.json()
         return Promise.reject(`Ошибка: ${res.status}`);
       })
-      .then(result => {
-        return result.token;
+      .then(async result => {
+        return await result.token;
       })
       .catch((err) => { return err });
   }

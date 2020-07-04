@@ -47,7 +47,7 @@ export class Popup {
             loginPopup.elements.password.value
           )
             .then(async (result) => {
-              if (result === "TypeError: Failed to fetch") {
+              if (result == "TypeError: Failed to fetch") {
                 alert("Потеряно соединение с сервером. Попобруйте повторить попытку или обратитесь к провайдеру ");
                 event.target.parentNode.querySelectorAll("input").disabled = false;
                 item.disabled = false
@@ -55,7 +55,7 @@ export class Popup {
               }
               if (result == "Ошибка: 401") {
                 alert("Пользователь с таким именем не зарегистрирован. Зарегистрируйте нового пользователя")
-                return
+                return Promise.reject(`Ошибка: ${res.status}`);
               }
               if (result) {
                 localStorage.token = result
@@ -84,7 +84,6 @@ export class Popup {
                   })
                 }
               }
-              return result
             })
           .catch(err => {
               console.log("Error: ", err)
@@ -96,7 +95,7 @@ export class Popup {
             registrationPopup.elements.password.value,
             registrationPopup.elements.name.value)
             .then((result) => {
-              if (result === "Ошибка: 409") {
+              if (result == "Ошибка: 409") {
                 existUserError.classList.remove("popup__exist-user-error_invisible")
               }
               if (result == "TypeError: Failed to fetch") {
