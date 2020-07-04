@@ -1,4 +1,4 @@
-import { options } from '../index'
+import { options } from '../constants/constants'
 
 export class MainApi {
   constructor(baseUrl, headers) {
@@ -7,7 +7,7 @@ export class MainApi {
   }
 
   async signin(email, password) {
-    return fetch(`${this.baseUrl}/signin`, {
+    return await fetch(`${this.baseUrl}/signin`, {
       method: 'POST',
       headers: { "Content-type": "application/json" },
       body: JSON.stringify({
@@ -15,9 +15,12 @@ export class MainApi {
         password: password
       })
     })
-      .then(res => { return res.json() })
-      .then(result => {
-        return result.token;
+      .then(async res => {
+        if (res.ok) return await res.json()
+        return Promise.reject(`Ошибка: ${res.status}`);
+      })
+      .then(async result => {
+        return await result.token;
       })
       .catch((err) => { return err });
   }
@@ -65,12 +68,12 @@ export class MainApi {
         'Content-Type': 'application/json'
       },
     })
-      .then(async (res) => {
-        if (res.ok) return await res.json();
+      .then((res) => {
+        if (res.ok) return res.json();
         return Promise.reject(`Ошибка: ${res.status}`);
       })
-      .then(async (result) => {
-        return await result;
+      .then((result) => {
+        return result;
       })
       .catch((err) => { return err });
   }
@@ -110,7 +113,7 @@ export class MainApi {
         'Content-Type': 'application/json'
       }
     })
-      .then(async (res) => {
+      .then((res) => {
         if (res.ok)
           return res.json();
         return Promise.reject(`Ошибка: ${res.status}`);

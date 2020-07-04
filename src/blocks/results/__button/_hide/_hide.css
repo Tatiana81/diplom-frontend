@@ -1,0 +1,18 @@
+.results__button_hide {
+  visibility: hidden;
+  margin: 0 auto 16px auto;
+}
+
+@media screen and (max-width: 768px) {
+  .results__button_hide {
+    margin: 0 264px 24px 34.375%;
+  }
+
+}
+
+@media screen and (max-width: 376px) {
+  .results__button_hide {
+    margin: 0 16px 0 16px;
+
+  }
+}
