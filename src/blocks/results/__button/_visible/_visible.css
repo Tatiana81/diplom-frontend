@@ -1,0 +1,16 @@
+.results__button_visible {
+  margin: 48px auto 80px auto;
+}
+
+@media screen and (max-width: 768px) {
+  .results__button_visible {
+    margin: 24px 264px 40px 34.375%;
+  }
+}
+
+@media screen and (max-width: 376px) {
+  .results__button {
+    margin: 7px 16px 32px 16px;
+  }
+
+}

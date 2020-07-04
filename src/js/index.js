@@ -1,23 +1,17 @@
 import "../pages/index.css"
 import { MainApi} from './api/MainApi'
 import './components/header'
-import './components/newsCard'
 import './components/newsCardList'
-import './components/popup'
+import './components/Popup'
 import './components/grey'
 import './utils/escapeListener'
 
 import {
   mobileMenuButtons, headerBlack, authorSubmenus, savedSubmenus, exitSubmenus, mainLinks,
-  exitLinks, headerWhite, savedLinks
+  exitLinks, headerWhite, savedLinks, options
 } from './constants/constants'
 
-export const options = {
-  currentSearchInput: "",
-  baseUrl: "https://api.tsnews.gq",
-}
-
-export const api = new MainApi(options.baseUrl,{
+export const api = new MainApi(options.baseUrl, {
     authorization: `Bearer ${localStorage.getItem('token')}`,
     'Content-Type': 'application/json'
 });
